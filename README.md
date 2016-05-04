@@ -28,9 +28,9 @@ For the full list of dependencies see the [`composer.json`](composer.json) file.
 The API documentation is located in the `docs/api` directory.
 
 ## Technical overview
-- The images are stored in a regular files in the given directory.
-- The files are organized in a 2-level directory structure with maximum of 256² directories.
-- The directory tree is well balanced thanks to the image hashes used for the directory path creation.
+- The images are stored in regular files in the given directory.
+- The files are organized in 2-level directory structure with maximum of 256² directories.
+- The directory tree is well balanced thanks to image hashes used for the directory path creation.
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
 
