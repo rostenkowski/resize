@@ -2,7 +2,10 @@
 
 *High Performance Image Storage written in PHP*
 
-[![Build Status](https://travis-ci.org/nette/application.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
+[![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
+[![Coverage Status](https://coveralls.io/repos/github/rostenkowski/imagestore/badge.svg?branch=master)](https://coveralls.io/github/rostenkowski/imagestore?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
 ## Requirements
 
