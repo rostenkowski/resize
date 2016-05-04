@@ -1,12 +1,11 @@
 {
   "name": "rostenkowski/imagestore",
   "type": "library",
-  "minimum-stability": "dev",
   "require": {
-    "nette/application": "dev-master",
-    "nette/http": "dev-master",
-    "latte/latte": "dev-master",
-    "nette/utils": "dev-master"
+    "nette/application": "~2.3",
+    "nette/http": "~2.3",
+    "latte/latte": "~2.2",
+    "nette/utils": "~2.4"
   },
   "require-dev": {
     "nette/tester": "dev-master"
