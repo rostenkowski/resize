@@ -2,32 +2,32 @@ language: php
 php:
     - 5.6
     - 7.0
-    #- hhvm
+    - hhvm
 
 env:
-    #- PHP_BIN=php
+    - PHP_BIN=php
     - PHP_BIN=php-cgi
 
 matrix:
-    #allow_failures:
-    #    - php: hhvm
+    allow_failures:
+        - php: hhvm
 
-    #exclude:
-    #    - php: hhvm
-    #      env: PHP_BIN=php-cgi
+    exclude:
+        - php: hhvm
+          env: PHP_BIN=php-cgi
 
     include:
         - php: 5.6
-          #env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
+          env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
         - php: 7.0
-          #env: coverage="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
+          env: coverage="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
 
 script:
     - bin/run-tests.sh 
     
 after_failure:
     # Print *.actual content
-    #- for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
+    - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
 
 before_script:
     # Install Nette Tester & Code Checker
@@ -36,11 +36,11 @@ before_script:
     
 after_script:
     # Report Code Coverage
-    #- >
-    #  if [ "$coverage" != "" ]; then
-    #  wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
-    #  && php coveralls.phar --verbose --config tests/.coveralls.yml
-    #  || true; fi
+    - >
+      if [ "$coverage" != "" ]; then
+      wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
+      && php coveralls.phar --verbose --config tests/.coveralls.yml
+      || true; fi
 
 sudo: false
 
