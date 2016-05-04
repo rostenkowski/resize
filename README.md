@@ -19,7 +19,7 @@ $ composer require rostenkowski/imagestore
 - PHP 5.6+
 - Nette Framework 2.3+ 
 
-**Compatibility:** Library should be also compatible with version Nette Framework 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.
+**Notice:** Library should be also compatible with Nette Framework version 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.
 
 For the full list of dependencies see the [`composer.json`](composer.json) file.
 
