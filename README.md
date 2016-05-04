@@ -10,11 +10,6 @@
 - PHP 5.6+
 - Nette Framework 2.2+
 
-## Setup
-```bash
-$ bin/setup.sh
-```
-
 For the full list of dependencies see the [`composer.json`](composer.json) file.
 
 ## Features
@@ -39,7 +34,7 @@ using the [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and t
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```bash
-$ composer install -o
+$ bin/setup.sh
 $ bin/run-tests.sh
 ```
 
