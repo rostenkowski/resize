@@ -1,4 +1,4 @@
-# Image Store
+# imagestore
 
 *High Performance Image Storage written in PHP*
 
