@@ -1,17 +1,12 @@
 # ImageStore
 
-*High Performance Image Storage written in PHP*
 
+[![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![Downloads this Month](https://img.shields.io/packagist/dm/rostenkowski/imagestore.svg)](https://packagist.org/packages/rostenkowski/imagestore)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
-## Requirements
-
-- PHP 5.6+
-- Nette Framework 2.2+
-
-For the full list of dependencies see the [`composer.json`](composer.json) file.
+> High Performance Image Storage written in PHP
 
 ## Features
 - The images are stored in a regular files in the given directory.
@@ -19,6 +14,24 @@ For the full list of dependencies see the [`composer.json`](composer.json) file.
 - The directory tree is well balanced thanks to the image hashes used for the directory path creation.
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
+
+
+## Installation
+
+Download the [latest package](https://github.com/rostenkowski/imagestore/releases)
+or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
+
+```bash
+$ composer require rostenkowski/imagestore
+```
+
+## Requirements
+- PHP 5.6+
+- Nette Framework 2.3+ 
+
+**Compatibility:** Library should be also compatible with version Nette Framework 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.
+
+For the full list of dependencies see the [`composer.json`](composer.json) file.
 
 ## API
 
@@ -29,7 +42,7 @@ The API documentation is located in the `docs/api` directory.
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
 To run the **ImageStore** tests simply install the dependencies
-using the [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the `bin/run-tests.sh` script.
+using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the `bin/run-tests.sh` script.
 
 To check the code coverage see the `docs/code-coverage.html` file.
 
@@ -50,12 +63,6 @@ PHP 5.6.20-1+deb.sury.org~trusty+1 (cgi-fcgi) | php-cgi -n -c .../tests/php.ini 
 
 OK (16 tests, 2.2 seconds)
 
-```
-
-## Usage
-
-```
-composer require rostenkowski/imagestore
 ```
 
 ## Example
