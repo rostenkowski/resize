@@ -27,19 +27,20 @@ script:
     
 after_failure:
     # Print *.actual content
-    - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
+    #- for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
 
 before_script:
     # Install Nette Tester & Code Checker
-    - travis_retry composer update --no-interaction --prefer-dist $dependencies
+    #- travis_retry bin/setup.sh
+    - travis_retry composer update --no-interaction --prefer-dist $dependencies 
     
 after_script:
     # Report Code Coverage
-    - >
-      if [ "$coverage" != "" ]; then
-      wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
-      && php coveralls.phar --verbose --config tests/.coveralls.yml
-      || true; fi
+    #- >
+    #  if [ "$coverage" != "" ]; then
+    #  wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
+    #  && php coveralls.phar --verbose --config tests/.coveralls.yml
+    #  || true; fi
 
 sudo: false
 
