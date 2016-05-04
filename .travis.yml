@@ -42,6 +42,11 @@ after_script:
       && php coveralls.phar --verbose --config tests/.coveralls.yml
       || true; fi
 
+
+after_success:
+    - php coveralls.phar -v --exclude-no-stmt
+
+
 sudo: false
 
 cache:
