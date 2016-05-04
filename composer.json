@@ -1,5 +1,5 @@
 {
-  "name": "spot/imagestore",
+  "name": "rostenkowski/imagestore",
   "type": "library",
   "minimum-stability": "dev",
   "require": {
