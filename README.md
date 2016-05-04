@@ -1,14 +1,14 @@
 # ImageStore
 
-> High Performance Image Storage written in PHP
-
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
+> High Performance Image Storage written in PHP
+
 ## Installation
 
-Download the [latest package](https://github.com/rostenkowski/imagestore/releases)
+Download the latest [package](https://github.com/rostenkowski/imagestore/releases)
 or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
 
 ```bash
@@ -26,6 +26,13 @@ For the full list of dependencies see the [`composer.json`](composer.json) file.
 ## API
 
 The API documentation is located in the `docs/api` directory.
+
+## Technical overview
+- The images are stored in a regular files in the given directory.
+- The files are organized in a 2-level directory structure with maximum of 256² directories.
+- The directory tree is well balanced thanks to the image hashes used for the directory path creation.
+- The storage stores only one file even if the same image is stored multiple times.
+- The image thumbnails are created on demand and cached in the cache directory.
 
 ## Tests
 
@@ -54,14 +61,6 @@ PHP 5.6.20-1+deb.sury.org~trusty+1 (cgi-fcgi) | php-cgi -n -c .../tests/php.ini 
 OK (16 tests, 2.2 seconds)
 
 ```
-
-
-## Technical overview
-- The images are stored in a regular files in the given directory.
-- The files are organized in a 2-level directory structure with maximum of 256² directories.
-- The directory tree is well balanced thanks to the image hashes used for the directory path creation.
-- The storage stores only one file even if the same image is stored multiple times.
-- The image thumbnails are created on demand and cached in the cache directory.
 
 
 ## Example
