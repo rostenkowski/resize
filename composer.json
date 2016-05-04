@@ -4,8 +4,8 @@
   "require": {
     "nette/application": "~2.3",
     "nette/http": "~2.3",
-    "latte/latte": "~2.2",
-    "nette/utils": "~2.4"
+    "latte/latte": "~2.3",
+    "nette/utils": "~2.3"
   },
   "require-dev": {
     "nette/tester": "dev-master"
