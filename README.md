@@ -1,4 +1,4 @@
-# rostenkowski/imagestore
+# ImageStore
 
 *High Performance Image Storage written in PHP*
 
