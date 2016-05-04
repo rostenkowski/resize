@@ -33,7 +33,7 @@ The API documentation is located in the `docs/api` directory.
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
 To run the **ImageStore** tests simply install the dependencies
-using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the `bin/run-tests.sh` script.
+using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script.
 
 To check the code coverage see the `docs/code-coverage.html` file.
 
