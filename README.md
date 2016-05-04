@@ -2,6 +2,8 @@
 
 *High Performance Image Storage written in PHP*
 
+[![Build Status](https://travis-ci.org/nette/application.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
+
 ## Requirements
 
 - PHP 5.6+
