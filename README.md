@@ -1,4 +1,4 @@
-# imagestore
+# rostenkowski/imagestore
 
 *High Performance Image Storage written in PHP*
 
@@ -53,6 +53,12 @@ OK (16 tests, 2.2 seconds)
 ```
 
 ## Usage
+
+```
+composer require rostenkowski/imagestore
+```
+
+## Example
 
 This simple example demonstrates how to use the **ImageStore** library in the [**Nette**](https://doc.nette.org/cs/2.3/quickstart) application
 using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html) library as ORM.
