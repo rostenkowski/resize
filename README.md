@@ -1,9 +1,8 @@
-# imagestore
+# ImageStore
 
 *High Performance Image Storage written in PHP*
 
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
-[![Downloads this Month](https://img.shields.io/packagist/dm/rostenkowski/imagestore.svg)](https://packagist.org/packages/rostenkowski/imagestore)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
 ## Requirements
@@ -54,6 +53,12 @@ OK (16 tests, 2.2 seconds)
 ```
 
 ## Usage
+
+```
+composer require rostenkowski/imagestore
+```
+
+## Example
 
 This simple example demonstrates how to use the **ImageStore** library in the [**Nette**](https://doc.nette.org/cs/2.3/quickstart) application
 using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html) library as ORM.
