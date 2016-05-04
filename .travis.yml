@@ -23,9 +23,8 @@ matrix:
           env: coverage="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
 
 script:
-    - vendor/bin/tester -p $PHP_BIN tests -s $coverage
-    - php temp/code-checker/src/code-checker.php --short-arrays
-
+    - bin/run-tests 
+    
 after_failure:
     # Print *.actual content
     - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
@@ -33,8 +32,7 @@ after_failure:
 before_script:
     # Install Nette Tester & Code Checker
     - travis_retry composer update --no-interaction --prefer-dist $dependencies
-    - travis_retry composer create-project nette/code-checker temp/code-checker ~2.5 --no-interaction
-
+    
 after_script:
     # Report Code Coverage
     - >
@@ -48,3 +46,4 @@ sudo: false
 cache:
     directories:
         - $HOME/.composer/cache
+            
