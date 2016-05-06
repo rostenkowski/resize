@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 use Tester\Environment;
 

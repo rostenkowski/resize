@@ -1,13 +1,13 @@
 <?php
 
-namespace Spot\ImageStore\Entity;
+namespace Rostenkowski\ImageStore\Entity;
 
 
 use Nette\Utils\Image;
 use Nette\Utils\Strings;
-use Spot\ImageStore\Entity\Exceptions\HashException;
-use Spot\ImageStore\Entity\Exceptions\ImageTypeException;
-use Spot\ImageStore\Meta;
+use Rostenkowski\ImageStore\Entity\Exceptions\HashException;
+use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Meta;
 
 /**
  * Basic implementation of the image meta information as Doctrine entity.

@@ -1,9 +1,9 @@
 <?php
 
-namespace Spot\ImageStore\Files;
+namespace Rostenkowski\ImageStore\Files;
 
 
-use Spot\ImageStore\File;
+use Rostenkowski\ImageStore\File;
 
 /**
  * Simple image file wrapper

@@ -1,13 +1,13 @@
 <?php
 
-namespace Spot\ImageStore\Requests;
+namespace Rostenkowski\ImageStore\Requests;
 
 
 use Nette\Object;
 use Nette\Utils\Image;
-use Spot\ImageStore\Entity\EmptyImage;
-use Spot\ImageStore\Meta;
-use Spot\ImageStore\Request;
+use Rostenkowski\ImageStore\Entity\EmptyImage;
+use Rostenkowski\ImageStore\Meta;
+use Rostenkowski\ImageStore\Request;
 
 /**
  * Image request encapsulation

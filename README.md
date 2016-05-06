@@ -79,7 +79,7 @@ in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte):
 nette:
     latte:
         macros:
-            - Spot\ImageStore\Macro\ImageMacro::install
+            - Rostenkowski\ImageStore\Macro\ImageMacro::install
 ```
 
 
@@ -90,7 +90,7 @@ nette:
 
 namespace MyApp\Entities;
 
-use Spot\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
 
 /** @ORM\Entity */
 class MyImageEntity extends ImageEntity
@@ -116,7 +116,7 @@ namespace MyApp\Presenters;
 use Doctrine\ORM\EntityManager;
 use Nette\Application\UI\Presenter;
 use Nette\Application\UI\Form;
-use Spot\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\ImageStorage;
 
 class MyPresenter extends Presenter
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
-use Spot\ImageStore\Entity\Exceptions\HashException;
-use Spot\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Entity\Exceptions\HashException;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

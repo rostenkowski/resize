@@ -1,10 +1,10 @@
 <?php
 
-namespace Spot\ImageStore\Directory;
+namespace Rostenkowski\ImageStore\Directory;
 
 
 use Nette\Object;
-use Spot\ImageStore\Directory\Exceptions\DirectoryException;
+use Rostenkowski\ImageStore\Directory\Exceptions\DirectoryException;
 
 /**
  * Directory wrapper

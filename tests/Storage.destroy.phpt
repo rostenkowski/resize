@@ -1,9 +1,9 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
-use Spot\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

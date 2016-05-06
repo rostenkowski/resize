@@ -1,13 +1,13 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
 use Latte\Engine;
-use Spot\ImageStore\Entity\ImageEntity;
-use Spot\ImageStore\Files\ImageFile;
-use Spot\ImageStore\ImageStorage;
-use Spot\ImageStore\Macro\ImageMacro;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\Macro\ImageMacro;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

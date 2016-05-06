@@ -1,10 +1,10 @@
 <?php
 
-namespace Spot\ImageStore\Entity;
+namespace Rostenkowski\ImageStore\Entity;
 
 
 use Nette\Utils\Image;
-use Spot\ImageStore\Meta;
+use Rostenkowski\ImageStore\Meta;
 
 /**
  * "Image not found" entity

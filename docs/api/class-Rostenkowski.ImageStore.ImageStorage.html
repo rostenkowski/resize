@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Rostenkowski\ImageStore\ImageStorage | Image Store</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Rostenkowski.html">
+						Rostenkowski<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Rostenkowski.ImageStore.html">
+						ImageStore<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Directory.html">
+						Directory<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Directory.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Entity.html">
+						Entity<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Entity.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Files.html">
+						Files<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Files.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Macro.html">
+						Macro					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Rostenkowski.ImageStore.Requests.html">
+						Requests					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Rostenkowski.ImageStore.ImageStorage.html">ImageStorage</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Rostenkowski.ImageStore.File.html">File</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Meta.html">Meta</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Request.html">Request</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Storage.html">Storage</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Rostenkowski.ImageStore.UploaderException.html">UploaderException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Rostenkowski.ImageStore.html" title="Summary of Rostenkowski\ImageStore"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ImageStorage</h1>
+
+
+	<div class="description">
+	<p>Image file storage</p>
+
+<ul>
+<li>The images are stored in a regular files in the given <code>$directory</code>.</li>
+<li>The files are organized in a 2-level directory structure with maximum of 256² directories.</li>
+<li>The directory tree is well balanced thanks to the image hashes used for the directory path creation.</li>
+<li>The storage stores only one file even if the same image is stored multiple times, thus images should be deleted only after it is sure it is not referenced from other entities.</li>
+<li>The image thumbnails are created on demand and cached in the <code>$cacheDirectory</code>.</li>
+</ul>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Rostenkowski\ImageStore\ImageStorage</span></b>
+			 implements 
+				<a href="class-Rostenkowski.ImageStore.Storage.html"><span>Rostenkowski\ImageStore\Storage</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Rostenkowski.html">Rostenkowski</a>\<a href="namespace-Rostenkowski.ImageStore.html">ImageStore</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#18-621" title="Go to source code">ImageStore/ImageStorage.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#67-80" title="Go to source code">__construct</a>( <span>string <var>$directory</var></span>, <span>string <var>$cacheDirectory</var></span>, <span>string <var>$baseUrl</var> = <span class="php-quote">'/cache/'</span></span>, <span>boolean <var>$tryCreateDirectories</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+		<div class="description short">
+			<p>Constructs the image file storage from the given arguments.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructs the image file storage from the given arguments.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$directory</var></dt>
+					<dd>The directory to store the images in</dd>
+					<dt><var>$cacheDirectory</var></dt>
+					<dd></dd>
+					<dt><var>$baseUrl</var></dt>
+					<dd></dd>
+					<dt><var>$tryCreateDirectories</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add" id="_add">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#83-95" title="Go to source code">add</a>( <span><code><a href="class-Rostenkowski.ImageStore.Files.ImageFile.html">Rostenkowski\ImageStore\Files\ImageFile</a></code> <var>$file</var></span>, <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Adds an image from the given file to the storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Adds an image from the given file to the storage.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd>The image file to add</dd>
+					<dt><var>$meta</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>TRUE on success or FALSE on failure
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="destroy" id="_destroy">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_destroy">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#180-192" title="Go to source code">destroy</a>( )</code>
+
+		<div class="description short">
+			<p>Effectively destroys te image storage by removing the storage and the cache directories.
+Warning: Use with caution!</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Effectively destroys te image storage by removing the storage and the cache directories.
+Warning: Use with caution!</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="erase" id="_erase">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_erase">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#195-207" title="Go to source code">erase</a>( )</code>
+
+		<div class="description short">
+			<p>Erases the entire storage directory (and also the cache directory).
+Warning: Use with caution!</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Erases the entire storage directory (and also the cache directory).
+Warning: Use with caution!</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetch" id="_fetch">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Utils\Image
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetch">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#210-222" title="Go to source code">fetch</a>( <span><code><a href="class-Rostenkowski.ImageStore.Request.html">Rostenkowski\ImageStore\Request</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			<p>Fetches the cached copy of an image by given request.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetches the cached copy of an image by given request.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd>The image request</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Nette\Utils\Image
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_fetch">Rostenkowski\ImageStore\Storage::fetch()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="original" id="_original">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Utils\Image
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_original">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#225-234" title="Go to source code">original</a>( <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Fetches the original image by the given image meta information.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetches the original image by the given image meta information.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$meta</var></dt>
+					<dd>The stored image meta information</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Nette\Utils\Image<br>The stored image
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_original">Rostenkowski\ImageStore\Storage::original()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="remove" id="_remove">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_remove">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#237-248" title="Go to source code">remove</a>( <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Removes the image from the storage by the given image meta information.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Removes the image from the storage by the given image meta information.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$meta</var></dt>
+					<dd>The image information</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_remove">Rostenkowski\ImageStore\Storage::remove()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="contains" id="_contains">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_contains">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#251-260" title="Go to source code">contains</a>( <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Checks if an image of the given meta information is stored in the storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Checks if an image of the given meta information is stored in the storage.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$meta</var></dt>
+					<dd>The image meta information</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>TRUE if image is present in the storage or FALSE otherwise
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_contains">Rostenkowski\ImageStore\Storage::contains()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="upload" id="_upload">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_upload">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#263-292" title="Go to source code">upload</a>( <span>Nette\Http\FileUpload <var>$upload</var></span>, <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Stores the given uploaded file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Stores the given uploaded file.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$upload</var></dt>
+					<dd></dd>
+					<dt><var>$meta</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\Application\AbortException
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_upload">Rostenkowski\ImageStore\Storage::upload()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="link" id="_link">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_link">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#295-307" title="Go to source code">link</a>( <span><code><a href="class-Rostenkowski.ImageStore.Request.html">Rostenkowski\ImageStore\Request</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the URL of the cached version of the image.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the URL of the cached version of the image.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd>The image request</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The URL of the image
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_link">Rostenkowski\ImageStore\Storage::link()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="download" id="_download">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Application\Responses\FileResponse
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_download">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#310-322" title="Go to source code">download</a>( <span><code><a href="class-Rostenkowski.ImageStore.Request.html">Rostenkowski\ImageStore\Request</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			<p>Creates the file download HTTP response which can be easily sent using the <code>send()</code> method.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates the file download HTTP response which can be easily sent using the <code>send()</code> method.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd>The image request</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Nette\Application\Responses\FileResponse
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_download">Rostenkowski\ImageStore\Storage::download()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="send" id="_send">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_send">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#325-341" title="Go to source code">send</a>( <span><code><a href="class-Rostenkowski.ImageStore.Request.html">Rostenkowski\ImageStore\Request</a></code> <var>$request</var></span> )</code>
+
+		<div class="description short">
+			<p>Renders the image directly to the standard output.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Renders the image directly to the standard output.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd>The image request</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_send">Rostenkowski\ImageStore\Storage::send()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="flush" id="_flush">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_flush">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#344-354" title="Go to source code">flush</a>( )</code>
+
+		<div class="description short">
+			<p>Flushes the entire cache by erasing the cache directory contents.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Flushes the entire cache by erasing the cache directory contents.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Rostenkowski.ImageStore.ImageStorage.html">Rostenkowski\ImageStore\ImageStorage</a></code><br>Fluent interface
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Rostenkowski.ImageStore.Storage.html#_flush">Rostenkowski\ImageStore\Storage::flush()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMimeType" id="_getMimeType">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMimeType">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#569-578" title="Go to source code">getMimeType</a>( <span>integer <var>$imageType</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the image MIME type according to the given image type.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the image MIME type according to the given image type.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$imageType</var></dt>
+					<dd>Image type</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="file" id="_file">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_file">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#581-590" title="Go to source code">file</a>( <span><code><a href="class-Rostenkowski.ImageStore.Meta.html">Rostenkowski\ImageStore\Meta</a></code> <var>$meta</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the original stored image filename.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the original stored image filename.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$meta</var></dt>
+					<dd>Image meta information</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getBaseUrl" id="_getBaseUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getBaseUrl">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#593-601" title="Go to source code">getBaseUrl</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the public accessible cache directory URL.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the public accessible cache directory URL.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setBaseUrl" id="_setBaseUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setBaseUrl">#</a>
+		<code><a href="source-class-Rostenkowski.ImageStore.ImageStorage.html#604-618" title="Go to source code">setBaseUrl</a>( <span>string <var>$baseUrl</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the public accessible cache directory URL.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the public accessible cache directory URL.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$baseUrl</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Image Store API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

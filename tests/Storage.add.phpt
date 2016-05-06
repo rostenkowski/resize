@@ -1,13 +1,13 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
-use Spot\ImageStore\Entity\Exceptions\ImageTypeException;
-use Spot\ImageStore\Entity\ImageEntity;
-use Spot\ImageStore\Files\Exceptions\ImageFileException;
-use Spot\ImageStore\Files\ImageFile;
-use Spot\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Files\Exceptions\ImageFileException;
+use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

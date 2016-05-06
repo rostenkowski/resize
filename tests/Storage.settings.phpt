@@ -1,10 +1,10 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
-use Spot\ImageStore\Directory\Exceptions\DirectoryException;
-use Spot\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\Directory\Exceptions\DirectoryException;
+use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

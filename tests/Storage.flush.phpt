@@ -1,13 +1,13 @@
 <?php
 
-namespace Spot\ImageStore\Tests;
+namespace Rostenkowski\ImageStore\Tests;
 
 
 use Nette\Utils\Finder;
-use Spot\ImageStore\Entity\ImageEntity;
-use Spot\ImageStore\Files\ImageFile;
-use Spot\ImageStore\ImageStorage;
-use Spot\ImageStore\Requests\ImageRequest;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\ImageStore\ImageStorage;
+use Rostenkowski\ImageStore\Requests\ImageRequest;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\ImageStore\Files\Exceptions;
+namespace Rostenkowski\ImageStore\Files\Exceptions;
 
 
 use InvalidArgumentException;

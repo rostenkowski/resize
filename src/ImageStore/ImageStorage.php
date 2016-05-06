@@ -1,6 +1,6 @@
 <?php
 
-namespace Spot\ImageStore;
+namespace Rostenkowski\ImageStore;
 
 
 use Nette\Application\AbortException;
@@ -9,11 +9,11 @@ use Nette\Http\FileUpload;
 use Nette\Object;
 use Nette\Utils\Image;
 use Nette\Utils\Strings;
-use Spot\ImageStore\Directory\Directory;
-use Spot\ImageStore\Entity\EmptyImage;
-use Spot\ImageStore\Entity\Exceptions\ImageTypeException;
-use Spot\ImageStore\Entity\ImageEnvelope;
-use Spot\ImageStore\Files\ImageFile;
+use Rostenkowski\ImageStore\Directory\Directory;
+use Rostenkowski\ImageStore\Entity\EmptyImage;
+use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Entity\ImageEnvelope;
+use Rostenkowski\ImageStore\Files\ImageFile;
 
 /**
  * Image file storage
