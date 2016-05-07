@@ -24,24 +24,14 @@ composer require rostenkowski/imagestore
 For the full list of dependencies see the [`composer.json`](composer.json):
 ```json
 {
-  "name": "rostenkowski/imagestore",
-  "type": "library",
+  ...
   "require": {
     "nette/application": "~2.3",
     "nette/http": "~2.3",
     "latte/latte": "~2.3",
     "nette/utils": "~2.3"
   },
-  "require-dev": {
-    "nette/tester": "dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "Rostenkowski\\": [
-        "src"
-      ]
-    }
-  }
+  ...
 }
 ```
 
