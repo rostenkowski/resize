@@ -44,8 +44,8 @@ using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then 
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```bash
-$ bin/setup.sh
-$ bin/run-tests.sh
+bin/setup.sh
+bin/run-tests.sh
 ```
 
 ```
