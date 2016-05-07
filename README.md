@@ -1,6 +1,6 @@
 # ImageStore
 
-High Performance Image Storage for PHP 5.6+/7+
+High Performance Image Storage for PHP
 
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
