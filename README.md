@@ -15,11 +15,11 @@ or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
 composer require rostenkowski/imagestore
 ```
 
-## Requirements
-- PHP 5.6+
-- Nette Framework 2.3+ 
+## Minimal requirements
+- PHP 5.6
+- Nette 2.3
 
-**Notice:** The library is fully compatible with the latest PHP **7.0** and it should be compatible with the Nette Framework version **2.2** and **2.4-dev** but currently it is tested against stable **2.3** branch.
+**Notice:** The library is fully compatible with the latest PHP **7.0** and it should be compatible with the Nette version **2.2** and **2.4-dev** but currently it is tested against stable **2.3** branch.
 
 For the full list of dependencies see the [`composer.json`](composer.json):
 ```json
