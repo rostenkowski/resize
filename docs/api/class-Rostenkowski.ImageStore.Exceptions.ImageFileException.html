@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException | Image Store</title>
+	<title>Class Rostenkowski\ImageStore\Exceptions\ImageFileException | Image Store</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -32,40 +32,24 @@
 						<ul>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Directory.html">
-						Directory<span></span>
-					</a>
+						Directory					</a>
 
-						<ul>
+						</li>
 				<li>
-					<a href="namespace-Rostenkowski.ImageStore.Directory.Exceptions.html">
-						Exceptions					</a>
-
-						</li>
-							</ul></li>
-				<li class="active">
 					<a href="namespace-Rostenkowski.ImageStore.Entity.html">
-						Entity<span></span>
-					</a>
+						Entity					</a>
 
-						<ul>
+						</li>
 				<li class="active">
-					<a href="namespace-Rostenkowski.ImageStore.Entity.Exceptions.html">
+					<a href="namespace-Rostenkowski.ImageStore.Exceptions.html">
 						Exceptions					</a>
 
 						</li>
-							</ul></li>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Files.html">
-						Files<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-Rostenkowski.ImageStore.Files.Exceptions.html">
-						Exceptions					</a>
+						Files					</a>
 
 						</li>
-							</ul></li>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Macro.html">
 						Macro					</a>
@@ -89,8 +73,10 @@
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-Rostenkowski.ImageStore.Entity.Exceptions.HashException.html">HashException</a></li>
-				<li class="active"><a href="class-Rostenkowski.ImageStore.Entity.Exceptions.ImageTypeException.html">ImageTypeException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.DirectoryException.html">DirectoryException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.HashException.html">HashException</a></li>
+				<li class="active"><a href="class-Rostenkowski.ImageStore.Exceptions.ImageFileException.html">ImageFileException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.ImageTypeException.html">ImageTypeException</a></li>
 			</ul>
 
 
@@ -114,7 +100,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-Rostenkowski.ImageStore.Entity.Exceptions.html" title="Summary of Rostenkowski\ImageStore\Entity\Exceptions"><span>Namespace</span></a>
+				<a href="namespace-Rostenkowski.ImageStore.Exceptions.html" title="Summary of Rostenkowski\ImageStore\Exceptions"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -126,7 +112,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class ImageTypeException</h1>
+	<h1>Class ImageFileException</h1>
 
 
 	<div class="description">
@@ -153,7 +139,7 @@ InvalidArgumentException
 		</dd>
 		<dd style="padding-left:90px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException</span></b>
+<b><span>Rostenkowski\ImageStore\Exceptions\ImageFileException</span></b>			
 			
 			
 		</dd>
@@ -169,10 +155,10 @@ InvalidArgumentException
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Rostenkowski.html">Rostenkowski</a>\<a href="namespace-Rostenkowski.ImageStore.html">ImageStore</a>\<a href="namespace-Rostenkowski.ImageStore.Entity.html">Entity</a>\<a href="namespace-Rostenkowski.ImageStore.Entity.Exceptions.html">Exceptions</a><br>
+		<b>Namespace:</b> <a href="namespace-Rostenkowski.html">Rostenkowski</a>\<a href="namespace-Rostenkowski.ImageStore.html">ImageStore</a>\<a href="namespace-Rostenkowski.ImageStore.Exceptions.html">Exceptions</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Rostenkowski.ImageStore.Entity.Exceptions.ImageTypeException.html#8-23" title="Go to source code">ImageStore/Entity/Exceptions/ImageTypeException.php</a>
+			<b>Located at</b> <a href="source-class-Rostenkowski.ImageStore.Exceptions.ImageFileException.html#8-22" title="Go to source code">ImageStore/Exceptions/ImageFileException.php</a>
 		<br>
 	</div>
 
@@ -192,7 +178,7 @@ InvalidArgumentException
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Rostenkowski.ImageStore.Entity.Exceptions.ImageTypeException.html#14-21" title="Go to source code">__construct</a>( <span>integer <var>$type</var></span> )</code>
+		<code><a href="source-class-Rostenkowski.ImageStore.Exceptions.ImageFileException.html#14-20" title="Go to source code">__construct</a>( <span>string <var>$filename</var></span> )</code>
 
 		<div class="description short">
 			
@@ -204,7 +190,7 @@ InvalidArgumentException
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$type</var></dt>
+					<dt><var>$filename</var></dt>
 					<dd></dd>
 				</dl></div>
 

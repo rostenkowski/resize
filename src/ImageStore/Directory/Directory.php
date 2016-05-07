@@ -4,7 +4,7 @@ namespace Rostenkowski\ImageStore\Directory;
 
 
 use Nette\Object;
-use Rostenkowski\ImageStore\Directory\Exceptions\DirectoryException;
+use Rostenkowski\ImageStore\Exceptions\DirectoryException;
 
 /**
  * Directory wrapper

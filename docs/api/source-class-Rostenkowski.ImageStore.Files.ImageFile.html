@@ -33,40 +33,24 @@
 						<ul>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Directory.html">
-						Directory<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-Rostenkowski.ImageStore.Directory.Exceptions.html">
-						Exceptions					</a>
+						Directory					</a>
 
 						</li>
-							</ul></li>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Entity.html">
-						Entity<span></span>
-					</a>
+						Entity					</a>
 
-						<ul>
+						</li>
 				<li>
-					<a href="namespace-Rostenkowski.ImageStore.Entity.Exceptions.html">
+					<a href="namespace-Rostenkowski.ImageStore.Exceptions.html">
 						Exceptions					</a>
 
 						</li>
-							</ul></li>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Files.html">
-						Files<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-Rostenkowski.ImageStore.Files.Exceptions.html">
-						Exceptions					</a>
+						Files					</a>
 
 						</li>
-							</ul></li>
 				<li>
 					<a href="namespace-Rostenkowski.ImageStore.Macro.html">
 						Macro					</a>
@@ -107,10 +91,10 @@
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-Rostenkowski.ImageStore.Directory.Exceptions.DirectoryException.html">Rostenkowski\ImageStore\Directory\Exceptions\DirectoryException</a></li>
-				<li><a href="class-Rostenkowski.ImageStore.Entity.Exceptions.HashException.html">Rostenkowski\ImageStore\Entity\Exceptions\HashException</a></li>
-				<li><a href="class-Rostenkowski.ImageStore.Entity.Exceptions.ImageTypeException.html">Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException</a></li>
-				<li><a href="class-Rostenkowski.ImageStore.Files.Exceptions.ImageFileException.html">Rostenkowski\ImageStore\Files\Exceptions\ImageFileException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.DirectoryException.html">Rostenkowski\ImageStore\Exceptions\DirectoryException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.HashException.html">Rostenkowski\ImageStore\Exceptions\HashException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.ImageFileException.html">Rostenkowski\ImageStore\Exceptions\ImageFileException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.ImageTypeException.html">Rostenkowski\ImageStore\Exceptions\ImageTypeException</a></li>
 				<li><a href="class-Rostenkowski.ImageStore.UploaderException.html">Rostenkowski\ImageStore\UploaderException</a></li>
 			</ul>
 
@@ -185,37 +169,31 @@
 </span><span id="38" class="l"><a href="#38">38: </a>    }
 </span><span id="39" class="l"><a href="#39">39: </a>
 </span><span id="40" class="l"><a href="#40">40: </a>
-</span><span id="41" class="l"><a href="#41">41: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">copy</span>(<span class="php-var">$target</span>)
+</span><span id="41" class="l"><a href="#41">41: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">getType</span>()
 </span><span id="42" class="l"><a href="#42">42: </a>    {
-</span><span id="43" class="l"><a href="#43">43: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">copy</span>(<span class="php-var">$this</span>-&gt;getName(), <span class="php-var">$target</span>);
+</span><span id="43" class="l"><a href="#43">43: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;type;
 </span><span id="44" class="l"><a href="#44">44: </a>    }
 </span><span id="45" class="l"><a href="#45">45: </a>
 </span><span id="46" class="l"><a href="#46">46: </a>
-</span><span id="47" class="l"><a href="#47">47: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">getType</span>()
+</span><span id="47" class="l"><a href="#47">47: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">setType</span>(<span class="php-var">$type</span>)
 </span><span id="48" class="l"><a href="#48">48: </a>    {
-</span><span id="49" class="l"><a href="#49">49: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;type;
+</span><span id="49" class="l"><a href="#49">49: </a>        <span class="php-var">$this</span>-&gt;type = <span class="php-var">$type</span>;
 </span><span id="50" class="l"><a href="#50">50: </a>    }
 </span><span id="51" class="l"><a href="#51">51: </a>
 </span><span id="52" class="l"><a href="#52">52: </a>
-</span><span id="53" class="l"><a href="#53">53: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">setType</span>(<span class="php-var">$type</span>)
+</span><span id="53" class="l"><a href="#53">53: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getName()
 </span><span id="54" class="l"><a href="#54">54: </a>    {
-</span><span id="55" class="l"><a href="#55">55: </a>        <span class="php-var">$this</span>-&gt;type = <span class="php-var">$type</span>;
+</span><span id="55" class="l"><a href="#55">55: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;name;
 </span><span id="56" class="l"><a href="#56">56: </a>    }
 </span><span id="57" class="l"><a href="#57">57: </a>
 </span><span id="58" class="l"><a href="#58">58: </a>
-</span><span id="59" class="l"><a href="#59">59: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getName()
+</span><span id="59" class="l"><a href="#59">59: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> setName(<span class="php-var">$name</span>)
 </span><span id="60" class="l"><a href="#60">60: </a>    {
-</span><span id="61" class="l"><a href="#61">61: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;name;
+</span><span id="61" class="l"><a href="#61">61: </a>        <span class="php-var">$this</span>-&gt;name = <span class="php-var">$name</span>;
 </span><span id="62" class="l"><a href="#62">62: </a>    }
 </span><span id="63" class="l"><a href="#63">63: </a>
-</span><span id="64" class="l"><a href="#64">64: </a>
-</span><span id="65" class="l"><a href="#65">65: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> setName(<span class="php-var">$name</span>)
-</span><span id="66" class="l"><a href="#66">66: </a>    {
-</span><span id="67" class="l"><a href="#67">67: </a>        <span class="php-var">$this</span>-&gt;name = <span class="php-var">$name</span>;
-</span><span id="68" class="l"><a href="#68">68: </a>    }
-</span><span id="69" class="l"><a href="#69">69: </a>
-</span><span id="70" class="l"><a href="#70">70: </a>}
-</span><span id="71" class="l"><a href="#71">71: </a></span></code></pre>
+</span><span id="64" class="l"><a href="#64">64: </a>}
+</span><span id="65" class="l"><a href="#65">65: </a></span></code></pre>
 
 	<div id="footer">
 		Image Store API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -223,6 +201,6 @@
 </div>
 </div>
 <script src="resources/combined.js?0fedbce1d47be40a4d71601ffa137abe69110b92"></script>
-<script src="elementlist.js?7cc1d01618b70253aa772c31e38652c0a667301a"></script>
+<script src="elementlist.js?51369af0b92469da09d2b0ea7748b13745f3fb3e"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Directory\Exceptions;
+namespace Rostenkowski\ImageStore\Exceptions;
 
 
 use InvalidArgumentException;

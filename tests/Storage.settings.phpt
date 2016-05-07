@@ -3,7 +3,7 @@
 namespace Rostenkowski\ImageStore\Tests;
 
 
-use Rostenkowski\ImageStore\Directory\Exceptions\DirectoryException;
+use Rostenkowski\ImageStore\Exceptions\DirectoryException;
 use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;
 

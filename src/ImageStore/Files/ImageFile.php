@@ -3,6 +3,7 @@
 namespace Rostenkowski\ImageStore\Files;
 
 
+use Rostenkowski\ImageStore\Exceptions\ImageFileException;
 use Rostenkowski\ImageStore\File;
 
 /**
@@ -31,7 +32,7 @@ class ImageFile implements File
 		$info = @getimagesize($filename); // @: will be escalated to exception on failure
 
 		if ($info === FALSE) {
-			throw new Exceptions\ImageFileException($filename);
+			throw new ImageFileException($filename);
 		}
 		$this->setName($filename);
 		$this->setType($info[2]);

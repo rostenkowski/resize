@@ -3,9 +3,9 @@
 namespace Rostenkowski\ImageStore\Tests;
 
 
-use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Files\Exceptions\ImageFileException;
+use Rostenkowski\ImageStore\Exceptions\ImageFileException;
 use Rostenkowski\ImageStore\Files\ImageFile;
 use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;

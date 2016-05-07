@@ -4,7 +4,7 @@ namespace Rostenkowski\ImageStore\Tests;
 
 
 use Nette\Utils\Image;
-use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Rostenkowski\ImageStore\Files\ImageFile;
 use Rostenkowski\ImageStore\ImageStorage;

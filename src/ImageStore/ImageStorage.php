@@ -11,7 +11,7 @@ use Nette\Utils\Image;
 use Nette\Utils\Strings;
 use Rostenkowski\ImageStore\Directory\Directory;
 use Rostenkowski\ImageStore\Entity\EmptyImage;
-use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Entity\ImageEnvelope;
 use Rostenkowski\ImageStore\Files\ImageFile;
 

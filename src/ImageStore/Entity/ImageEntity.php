@@ -5,8 +5,8 @@ namespace Rostenkowski\ImageStore\Entity;
 
 use Nette\Utils\Image;
 use Nette\Utils\Strings;
-use Rostenkowski\ImageStore\Entity\Exceptions\HashException;
-use Rostenkowski\ImageStore\Entity\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Exceptions\HashException;
+use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Meta;
 
 /**

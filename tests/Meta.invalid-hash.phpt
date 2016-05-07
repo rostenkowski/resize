@@ -3,7 +3,7 @@
 namespace Rostenkowski\ImageStore\Tests;
 
 
-use Rostenkowski\ImageStore\Entity\Exceptions\HashException;
+use Rostenkowski\ImageStore\Exceptions\HashException;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Tester\Assert;
 
