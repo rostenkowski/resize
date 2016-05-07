@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>ImageStore by rostenkowski</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">ImageStore</h1>
+      <h2 class="project-tagline">High Performance Image Storage written in PHP</h2>
+      <a href="https://github.com/rostenkowski/imagestore" class="btn">View on GitHub</a>
+      <a href="https://github.com/rostenkowski/imagestore/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/rostenkowski/imagestore/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://github.com/rostenkowski/imagestore/releases"><img src="https://poser.pugx.org/rostenkowski/imagestore/v/stable" alt="Latest Stable Version"></a>
+<a href="https://travis-ci.org/rostenkowski/imagestore"><img src="https://travis-ci.org/rostenkowski/imagestore.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.com/rostenkowski/imagestore/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-New%20BSD-blue.svg" alt="License"></a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Download the latest <a href="https://github.com/rostenkowski/imagestore/releases">package</a>
+or use <a href="https://getcomposer.org/doc/00-intro.md#globally"><strong>Composer</strong></a>:</p>
+
+<div class="highlight highlight-source-shell"><pre>composer require rostenkowski/imagestore</pre></div>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>PHP 5.6+</li>
+<li>Nette Framework 2.3+ </li>
+</ul>
+
+<p><strong>Notice:</strong> Library should be also compatible with Nette Framework version 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.</p>
+
+<p>For the full list of dependencies see the <a href="composer.json"><code>composer.json</code></a> file.</p>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+
+<p>The API documentation is located in the <code>docs/api</code> directory.</p>
+
+<h2>
+<a id="technical-overview" class="anchor" href="#technical-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Technical overview</h2>
+
+<ul>
+<li>The images are stored in regular files in the given directory.</li>
+<li>The files are organized in 2-level directory structure with maximum of 256² directories.</li>
+<li>The directory tree is well balanced thanks to image hashes used for the directory path creation.</li>
+<li>The storage stores only one file even if the same image is stored multiple times.</li>
+<li>The image thumbnails are created on demand and cached in the cache directory.</li>
+</ul>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+
+<p>The source code of the library is fully covered by <a href="https://tester.nette.org/"><strong>Nette Tester</strong></a> tests.</p>
+
+<p>To run the <strong>ImageStore</strong> tests simply install the dependencies
+using <a href="https://getcomposer.org/doc/00-intro.md#globally"><strong>Composer</strong></a> and then run the <a href="bin/run-tests.sh"><code>bin/run-tests.sh</code></a> script.</p>
+
+<p>To check the code coverage see the <code>docs/code-coverage.html</code> file.</p>
+
+<div class="highlight highlight-source-shell"><pre>bin/setup.sh
+bin/run-tests.sh</pre></div>
+
+<pre><code> _____ ___  ___ _____ ___  ___
+|_   _/ __)( __/_   _/ __)| _ )
+  |_| \___ /___) |_| \___ |_|_\  v2.0.x
+
+PHP 5.6.20-1+deb.sury.org~trusty+1 (cgi-fcgi) | php-cgi -n -c .../tests/php.ini | 1 thread
+
+................
+
+
+OK (16 tests, 2.2 seconds)
+
+</code></pre>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<p>This simple example demonstrates how to use the <strong>ImageStore</strong> library in the <a href="https://doc.nette.org/cs/2.3/quickstart"><strong>Nette</strong></a> application
+using the <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html"><strong>Doctrine</strong></a> library as ORM.</p>
+
+<p>It assumes that the <strong>Doctrine's EntityManager</strong> is available trough the application DI container.</p>
+
+<h3>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+
+<p>Image macros should be added to the <a href="https://latte.nette.org/"><strong>Latte engine</strong></a> as described
+in <a href="https://doc.nette.org/en/2.2/configuring#toc-latte">documentation</a>:</p>
+
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">nette:</span></span>
+    <span class="pl-s"><span class="pl-ent">latte:</span></span>
+        <span class="pl-s"><span class="pl-ent">macros:</span></span>
+            <span class="pl-s">- <span class="pl-s">Rostenkowski\ImageStore\Macro\ImageMacro::install</span></span></pre></div>
+
+<h3>
+<a id="entity" class="anchor" href="#entity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Entity</h3>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">MyApp\Entities</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Rostenkowski\ImageStore\Entity\ImageEntity</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/** @ORM\Entity */</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyImageEntity</span> <span class="pl-k">extends</span> <span class="pl-e">ImageEntity</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-c">/** @ORM\Id */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$id</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">getId</span>()</span>
+<span class="pl-s1">    {</span>
+<span class="pl-s1">        <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">id</span>;</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span></pre></div>
+
+<h3>
+<a id="presenter" class="anchor" href="#presenter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Presenter</h3>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">MyApp\Presenters</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Doctrine\ORM\EntityManager</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Nette\Application\UI\Presenter</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Nette\Application\UI\Form</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Rostenkowski\ImageStore\ImageStorage</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyPresenter</span> <span class="pl-k">extends</span> <span class="pl-e">Presenter</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-c">/** @var ImageStorage */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$images</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-c">/** @inject @var EntityManager */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$em</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-c">/** @persistent @var integer */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$avatar</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">protected</span> <span class="pl-k">function</span> <span class="pl-en">startup</span>()</span>
+<span class="pl-s1">    {</span>
+<span class="pl-s1">        <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">images</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">ImageStorage</span>(<span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/images<span class="pl-pds">'</span></span>, <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/cache<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">        <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">template</span><span class="pl-k">-&gt;</span><span class="pl-smi">__imageStore</span> <span class="pl-k">=</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">images</span>; <span class="pl-c">// this is important for the image macros</span></span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">createComponentProfile</span>()</span>
+<span class="pl-s1">    {</span>
+<span class="pl-s1">        <span class="pl-smi">$form</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Form</span>();</span>
+<span class="pl-s1">        <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>addUpload(<span class="pl-s"><span class="pl-pds">'</span>avatar<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">        <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>addSubmit(<span class="pl-s"><span class="pl-pds">'</span>save<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Save changes<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">        <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span><span class="pl-smi">onSuccess</span>[] <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">$form</span>, <span class="pl-smi">$values</span>) {</span>
+<span class="pl-s1">            <span class="pl-smi">$image</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">MyImageEntity</span>();</span>
+<span class="pl-s1">            <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">images</span><span class="pl-k">-&gt;</span>upload(<span class="pl-smi">$values</span><span class="pl-k">-&gt;</span><span class="pl-smi">avatar</span>, <span class="pl-smi">$image</span>);</span>
+<span class="pl-s1">            <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">em</span><span class="pl-k">-&gt;</span>persist(<span class="pl-smi">$image</span>);</span>
+<span class="pl-s1">            <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">avatar</span> <span class="pl-k">=</span> <span class="pl-smi">$image</span><span class="pl-k">-&gt;</span>getId();</span>
+<span class="pl-s1">        };</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">        <span class="pl-k">return</span> <span class="pl-smi">$form</span>;</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">renderDefault</span>()</span>
+<span class="pl-s1">    {</span>
+<span class="pl-s1">        <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">template</span><span class="pl-k">-&gt;</span><span class="pl-smi">avatar</span> <span class="pl-k">=</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">em</span><span class="pl-k">-&gt;</span>find(<span class="pl-c1">MyImageEntity</span><span class="pl-k">::</span><span class="pl-c1">class</span>, <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">avatar</span>);</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">}</span></pre></div>
+
+<h3>
+<a id="latte-template" class="anchor" href="#latte-template" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Latte template</h3>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span>&gt;
+    ...
+    &lt;<span class="pl-ent">img</span> <span class="pl-e">n:crop</span>=<span class="pl-s"><span class="pl-pds">"</span>$avatar, '64x64'<span class="pl-pds">"</span></span>&gt;
+    ...
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p><a href="https://packagist.org/packages/rostenkowski/imagestore"><img src="https://img.shields.io/packagist/dm/rostenkowski/imagestore.svg" alt="Downloads this Month"></a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/rostenkowski/imagestore">ImageStore</a> is maintained by <a href="https://github.com/rostenkowski">rostenkowski</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
