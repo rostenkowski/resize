@@ -12,7 +12,7 @@ Download the latest [package](https://github.com/rostenkowski/imagestore/release
 or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
 
 ```bash
-$ composer require rostenkowski/imagestore
+composer require rostenkowski/imagestore
 ```
 
 ## Requirements
