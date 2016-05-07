@@ -21,7 +21,7 @@ composer require rostenkowski/imagestore
 
 **Notice:** Library should be also compatible with Nette Framework version 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.
 
-For the full list of dependencies see the [`composer.json`](composer.json) file.
+For the full list of dependencies see the [`composer.json`](composer.json):
 ```json
 {
   "name": "rostenkowski/imagestore",
