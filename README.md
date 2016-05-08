@@ -9,7 +9,7 @@ High Performance Image Storage for PHP
 ## Installation
 
 Download the latest [package](https://github.com/rostenkowski/imagestore/releases)
-or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
+or use [**composer**](https://getcomposer.org/doc/00-intro.md#globally)
 
 ```bash
 composer require rostenkowski/imagestore
