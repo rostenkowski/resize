@@ -32,7 +32,7 @@ For the API documentation see the `docs/api/` directory and open `index.html` fi
 ## Tests
 The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
-For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json):
+For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
