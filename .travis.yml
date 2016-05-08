@@ -32,9 +32,9 @@ after_failure:
     - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
 
 before_script:
-    - php -v
+    - travis_retry php -v
     - travis_retry composer update --no-interaction -o PREFER_LOWEST
-    - composer show
+    - travis_retry composer show
 
 sudo: false
 
