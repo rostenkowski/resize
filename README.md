@@ -55,17 +55,15 @@ using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then 
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```
-# run tests on linux
+# run tests on linux, on win u can run in git bash: bin/run-tests-win.sh
 bin/run-tests.sh
-# on win u can run eg. in git bash
-bin/run-tests-win.sh
  _____ ___  ___ _____ ___  ___
 |_   _/ __)( __/_   _/ __)| _ )
   |_| \___ /___) |_| \___ |_|_\  v2.0.x
 
-PHP 5.6.21-1+donate.sury.org~trusty+1 (cgi-fcgi) | php-cgi -n -c .../tests/php.ini | 1 thread
+PHP 5.6.5 (cgi-fcgi) | php-cgi -n -c tests/php.ini | 1 thread
 .............
-OK (13 tests, 2.2 seconds)
+OK (13 tests, 2.7 seconds)
 ```
 
 
