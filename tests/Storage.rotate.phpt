@@ -20,13 +20,14 @@ $storage = new ImageStorage($storeDir, $cacheDir);
 $meta = new ImageEntity();
 $storage->add(new ImageFile(__DIR__ . '/sample-images/sample-landscape.jpg'), $meta);
 Assert::true($storage->contains($meta));
+Assert::equal(1, Finder::findDirectories('*')->in($storeDir)->count());
 Assert::equal('e97c1cb54b3312f503825474cea49589e4cc3b5d', $meta->getHash());
-Assert::equal(Finder::findDirectories('*')->in($storeDir)->count(), 1);
 
 $storage->rotate($meta);
 Assert::true($storage->contains($meta));
-Assert::equal('b4d8d1e46333e42b4ede050da2d12552eb78335a', $meta->getHash());
-Assert::equal(Finder::findDirectories('*')->in($storeDir)->count(), 2);
+Assert::equal(2, Finder::findDirectories('*')->in($storeDir)->count());
+$rotatedImageHash = 'b4d8d1e46333e42b4ede050da2d12552eb78335a';
+Assert::equal($rotatedImageHash, $meta->getHash());
 
 // wipeout testing directories
 exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
