@@ -3,6 +3,7 @@
 namespace Rostenkowski\ImageStore;
 
 
+use Latte\Engine;
 use Nette\Configurator;
 use Tester\Assert;
 
@@ -21,9 +22,11 @@ $container = $configurator->createContainer();
 
 $storage = $container->getService('imageStore.storage');
 
-$class = get_class($storage);
+Assert::type(ImageStorage::class, $storage);
 
-Assert::true($storage instanceof $class, $storage);
+$latte = $container->getService('nette.latte');
+
+Assert::type(Engine::class, $latte);
 
 exec("rm -rf $dir/tests/storage");
 exec("rm -rf $dir/tests/www");
