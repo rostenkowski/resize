@@ -25,14 +25,14 @@ matrix:
           env: COVERAGE="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
 
 script:
-    - vendor/bin/tester -j 1 -c tests/php.ini tests/ $COVERAGE
+    - vendor/bin/tester -j 1 -c tests/php.ini tests/ COVERAGE
     
 after_failure:
     - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
 
 before_script:
     - travis_retry php -v
-    - travis_retry composer update --no-interaction -o $DEPS
+    - travis_retry composer update --no-interaction -o DEPS
     - travis_retry composer show
 
 sudo: false
