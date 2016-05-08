@@ -31,8 +31,8 @@ imageStore:
 - PHP 5.5+
 - Nette 2.2+
 
-## API
-For the API docs navigate to the `docs/api/` directory and open `index.html` file.
+## API 
+For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
