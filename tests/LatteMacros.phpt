@@ -19,8 +19,8 @@ $storage = new ImageStorage($storeDir, $cacheDir);
 
 // install "not found" image
 $sampleDir = __DIR__ . '/sample-images';
-exec("mkdir -p $storeDir/_empty");
-exec("cp $sampleDir/_empty.png $storeDir/_empty/_empty.png");
+mkdir("$storeDir/_empty", 0755, TRUE);
+copy("$sampleDir/_empty.png", "$storeDir/_empty/_empty.png");
 
 // test: image macros
 $meta = new ImageEntity();
