@@ -38,7 +38,7 @@ For the full list of dependencies see the [`composer.json`](https://github.com/r
 The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
 To run the tests simply install the dependencies
-using [composer](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in **git bash**: `bin/run-tests-win.sh`.
+using [composer](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. git bash: `bin/run-tests-win.sh`.
 
 ```
 bin/run-tests.sh
