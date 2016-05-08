@@ -28,12 +28,56 @@ imageStore:
 	cacheDir:   %baseDir%/www/cache/images
 	basePath:   /cache/images/
 ```
+## Compatibility
+The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
-## Minimal requirements
-- PHP 5.5+
-- Nette 2.2+
+For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
-## API 
+### Suggested requirements
+- PHP 5.6
+- Nette 2.3
+
+### Minimal requirements
+- PHP 5.5
+- Nette 2.2
+
+
+## Storage API 
+```php
+<?php
+
+use Rostenkowski\ImageStore\Meta;
+use Rostenkowski\ImageStore\File;
+use Rostenkowski\ImageStore\Request;
+use Rostenkowski\ImageStore\ImageStorage;
+use Nette\Application\Responses\FileResponse;
+use Nette\Http\FileUpload;
+use Nette\Utils\Image;
+
+ImageStorage $storage = new ImageStorage('/data/images', '/www/images', '/images/');
+
+// add an image from file
+void $storage->add(File $image, Meta $meta);
+// add a HTTP uploaded file
+void $storage->upload(FileUpload $file, Meta $meta);
+
+// check that an image already exists in the storage
+boolean $storage->contains(Meta $meta);
+// fetch original
+Image $storage->original(Meta $meta);
+// rotate image
+void $storage->rotate(Meta $meta, 90);
+
+// downloaded requested thumbnail
+FileResponse $storage->download(Request $request);
+// fetch requested thumbnail
+Image $storage->fetch(Request $request);
+// link requested thumbnail
+string $storage->link(Request $request);
+// output requested thumbnail
+void $storage->send(Request $request);
+```
+
 For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
@@ -42,11 +86,6 @@ For the full API documentation navigate to the `docs/api/` directory and open `i
 - The directory tree is well balanced thanks to image hashes used for the directory path creation.
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
-
-## Compatibility
-The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
-
-For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
 ## Contribution
 
@@ -77,7 +116,7 @@ This simple example demonstrates how to use this library in a [Nette](https://do
 
 It assumes that you have the Doctrine EntityManager available trough the application DI container.
 
-If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
+If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
