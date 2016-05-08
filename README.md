@@ -40,7 +40,6 @@ The source code of the library is fully covered by [**Nette Tester**](https://te
 
 To run the tests simply install the dependencies
 using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. **git bash**: `bin/run-tests-win.sh`.
-To check the code coverage see the `docs/code-coverage.html` file.
 
 ```
 bin/run-tests.sh
@@ -53,6 +52,8 @@ PHP 5.6.5 (cgi-fcgi) | php-cgi -n -c tests/php.ini | 1 thread
 OK (13 tests, 2.7 seconds)
 ```
 
+To check the code coverage see the `docs/code-coverage.html` file.
+![Coverage Report](https://github.com/rostenkowski/imagestore/raw/master/doc/coverage.png)
 
 ## Example
 
