@@ -32,30 +32,17 @@ The API documentation is located in the `docs/api` directory.
 
 ## Tests
 
-**Notice:** The library is tested against PHP **5.5**, **5.6** and the latest **7.0** and Nette **2.2** but it should be compatible with **2.3** and the latest **2.4-dev** but currently it is tested against the lowest **2.2** branch.
+The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
-For the full list of dependencies see the [`composer.json`](composer.json):
-```json
-{
-  "require": {
-    "nette/application": ">=2.2",
-    "nette/http": ">=2.2",
-    "latte/latte": ">=2.2",
-    "nette/utils": ">=2.2"
-  },
-}
-```
-
+For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json):
 
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
-To run the **ImageStore** tests simply install the dependencies
-using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script.
-
+To run the tests simply install the dependencies
+using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. **git bash**: `bin/run-tests-win.sh`.
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```
-# run tests on linux, on win u can run in git bash: bin/run-tests-win.sh
 bin/run-tests.sh
  _____ ___  ___ _____ ___  ___
 |_   _/ __)( __/_   _/ __)| _ )
