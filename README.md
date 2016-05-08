@@ -1,10 +1,10 @@
 # ImageStore
 
+High Performance Image Storage for PHP
+
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
-
-> High Performance Image Storage written in PHP
 
 ## Installation
 
@@ -12,16 +12,26 @@ Download the latest [package](https://github.com/rostenkowski/imagestore/release
 or use [**Composer**](https://getcomposer.org/doc/00-intro.md#globally):
 
 ```bash
-$ composer require rostenkowski/imagestore
+composer require rostenkowski/imagestore
 ```
 
-## Requirements
-- PHP 5.6+
-- Nette Framework 2.3+ 
+## Minimal requirements
+- PHP 5.6
+- Nette 2.3
 
-**Notice:** Library should be also compatible with Nette Framework version 2.2 and 2.4-dev but currently is tested against stable 2.3 branch.
+**Notice:** The library is fully compatible with the latest PHP **7.0** and it should be compatible with the Nette version **2.2** and **2.4-dev** but currently it is tested against stable **2.3** branch.
 
-For the full list of dependencies see the [`composer.json`](composer.json) file.
+For the full list of dependencies see the [`composer.json`](composer.json):
+```json
+{
+  "require": {
+    "nette/application": "~2.3",
+    "nette/http": "~2.3",
+    "latte/latte": "~2.3",
+    "nette/utils": "~2.3"
+  },
+}
+```
 
 ## API
 
@@ -44,8 +54,8 @@ using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then 
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```bash
-$ bin/setup.sh
-$ bin/run-tests.sh
+bin/setup.sh
+bin/run-tests.sh
 ```
 
 ```
