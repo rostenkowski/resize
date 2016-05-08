@@ -67,26 +67,12 @@ OK (13 tests, 2.7 seconds)
 To check the code coverage see the `docs/coverage.html` file.
 ![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
-## Usage example
+## Example usage
 This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
-It assumes that the Doctrine EntityManager is available trough the application DI container.
+It assumes that you have the Doctrine EntityManager available trough the application DI container.
 
-### Configuration using the Nette DI extension
-```yml
-extensions:
-	imageStore: Rostenkowski\ImageStoreExtension
-
-imageStore:
-	storageDir: %baseDir%/storage/images
-	cacheDir:   %baseDir%/www/cache/images
-	basePath:   /cache/images/
-```
-
-#### Manual configuration
-
-Image macros should be added to the [Latte](https://latte.nette.org/) engine  as described
-in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
+If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
