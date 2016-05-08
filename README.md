@@ -17,6 +17,8 @@ composer require rostenkowski/imagestore
 ```
 
 ## Usage
+
+The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/blob/master/app/config/config.local.neon). 
 ```yml
 extensions:
 	imageStore: Rostenkowski\ImageStoreExtension
