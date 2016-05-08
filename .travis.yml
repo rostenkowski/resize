@@ -17,6 +17,8 @@ matrix:
           env: PHP_BIN=php-cgi
 
     include:
+        - php: 5.5
+          env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
         - php: 5.6
           env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
         - php: 7.0

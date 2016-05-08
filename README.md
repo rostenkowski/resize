@@ -16,8 +16,8 @@ composer require rostenkowski/imagestore
 ```
 
 ## Minimal requirements
-- PHP 5.6
-- Nette 2.3
+- PHP 5.5+
+- Nette 2.3+
 
 **Notice:** The library is fully compatible with the latest PHP **7.0** and it should be compatible with the Nette version **2.2** and **2.4-dev** but currently it is tested against stable **2.3** branch.
 
