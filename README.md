@@ -48,9 +48,13 @@ The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3**
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
+## Contribution
+
+Feel free to open an issue pull-request.
+
 The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
-To run the tests simply install the dependencies
+To run the test suite simply install the dependencies
 using [composer](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. git bash: `bin/run-tests-win.sh`.
 
 ```
