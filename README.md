@@ -21,29 +21,28 @@ composer require rostenkowski/imagestore
 The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/tree/master/app/config). 
 ```yml
 extensions:
-	imageStore: Rostenkowski\ImageStore\Extension
+    imageStore: Rostenkowski\ImageStore\Extension
 
 imageStore:
-	storageDir: %baseDir%/data/images
-	cacheDir:   %baseDir%/www/images
-	basePath:   /images/
+    storageDir: %baseDir%/data/images
+    cacheDir:   %baseDir%/www/images
+    basePath:   /images/
 ```
 
 **Manual configuration**
 
 If you aren't using the the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte):
-
-```yaml
-services:
-    - images: Rostenkowski\ImageStore\ImageStorage("%baseDir%/data/images", "%baseDir%/www/images")
-```   
-Storage service can be registered this way:
 ```yml
 nette:
     latte:
         macros:
             - Rostenkowski\ImageStore\Macro\ImageMacro::install
 ```
+The storage can be created manually in presenter or registered as service this way:
+```yaml
+services:
+    - images: Rostenkowski\ImageStore\ImageStorage("%baseDir%/data/images", "%baseDir%/www/images", "/images/")
+```   
 
 ## Requirements 
 - **PHP** Suggested **5.6**, Minimal 5.5
