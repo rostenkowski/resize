@@ -66,6 +66,9 @@ interface Storage
 	public function remove(Meta $meta);
 
 
+	public function rotate(Meta $meta, $deg = 90);
+
+
 	/**
 	 * Renders the requested image to the standard output.
 	 *

@@ -3,7 +3,6 @@
 namespace Rostenkowski\ImageStore;
 
 
-use Nette\Application\AbortException;
 use Nette\Application\Responses\FileResponse;
 use Nette\Http\FileUpload;
 use Nette\Object;
@@ -84,103 +83,6 @@ class ImageStorage extends Object implements Storage
 		}
 
 		$this->setBaseUrl($baseUrl);
-	}
-
-
-	/**
-	 * Adds an image from the given file to the storage.
-	 *
-	 * @param ImageFile $file The image file to add
-	 * @param Meta      $meta
-	 * @return boolean TRUE on success or FALSE on failure
-	 */
-	public function add(ImageFile $file, Meta $meta)
-	{
-		$this->readMeta($file->getName(), $meta);
-
-		return copy($file->getName(), $this->createFilename($meta));
-	}
-
-
-	/**
-	 * Reads the image type from the given `$filename`, computes the image hash
-	 * and store these information in the given `$meta`.
-	 *
-	 * @param string $filename The file to read the meta-data from
-	 * @param Meta   $meta     The object to store meta-data in
-	 */
-	private function readMeta($filename, Meta $meta)
-	{
-		$info = getimagesize($filename);
-		$meta->setHash($this->hash($filename));
-		$meta->setWidth($info[0]);
-		$meta->setHeight($info[1]);
-		$meta->setType($info[2]);
-	}
-
-
-	/**
-	 * Creates the absolute file name from the given meta information.
-	 *
-	 * @param  Meta $meta The image meta information
-	 * @return string The absolute file name
-	 */
-	private function createFilename(Meta $meta)
-	{
-		$path = $this->createDirectoryPath($meta->getHash());
-		$ext = $this->getExtension($meta->getType());
-		$hash = $meta->getHash();
-
-		$filename = "$this->directory/$path/$hash.$ext";
-
-		new Directory(dirname($filename));
-
-		return $filename;
-	}
-
-
-	/**
-	 * Computes the SHA1 hash for the given file.
-	 *
-	 * @param string $filename The file to compute the hash from
-	 * @return string The SHA1 hash of a file
-	 */
-	private function hash($filename)
-	{
-		return sha1_file($filename);
-	}
-
-
-	/**
-	 * Creates the internal directory path from the given hash.
-	 *
-	 * Some special images like the "Image Not Available" image are stored
-	 * in directories prefixed with an underscore. Those directories are not
-	 * fragmented to hash based structure.
-	 *
-	 * @param  string $hash Tha SHA1 hash
-	 * @return string
-	 */
-	private function createDirectoryPath($hash)
-	{
-		if ($hash{0} === '_') {
-			return $hash;
-		}
-
-		return "$hash[0]$hash[1]/$hash[2]$hash[3]";
-	}
-
-
-	/**
-	 * Returns the file extension for the given image type.
-	 *
-	 * @param  integer $type The image type
-	 * @return string             The file extension
-	 * @throws ImageTypeException
-	 */
-	private function getExtension($type)
-	{
-		return $this->extensions[$type];
 	}
 
 
@@ -511,6 +413,19 @@ class ImageStorage extends Object implements Storage
 
 
 	/**
+	 * Returns the file extension for the given image type.
+	 *
+	 * @param  integer $type The image type
+	 * @return string             The file extension
+	 * @throws ImageTypeException
+	 */
+	private function getExtension($type)
+	{
+		return $this->extensions[$type];
+	}
+
+
+	/**
 	 * Creates the internal directory path from the given hash.
 	 *
 	 * Some special images like the "Image Not Available" image are stored
@@ -527,6 +442,75 @@ class ImageStorage extends Object implements Storage
 		}
 
 		return "$hash[0]$hash[1]/$hash[2]$hash[3]" . '/' . $hash;
+	}
+
+
+	/**
+	 * Creates the absolute file name from the given meta information.
+	 *
+	 * @param  Meta $meta The image meta information
+	 * @return string The absolute file name
+	 */
+	private function createFilename(Meta $meta)
+	{
+		$path = $this->createDirectoryPath($meta->getHash());
+		$ext = $this->getExtension($meta->getType());
+		$hash = $meta->getHash();
+
+		$filename = "$this->directory/$path/$hash.$ext";
+
+		new Directory(dirname($filename));
+
+		return $filename;
+	}
+
+
+	/**
+	 * Creates the internal directory path from the given hash.
+	 *
+	 * Some special images like the "Image Not Available" image are stored
+	 * in directories prefixed with an underscore. Those directories are not
+	 * fragmented to hash based structure.
+	 *
+	 * @param  string $hash Tha SHA1 hash
+	 * @return string
+	 */
+	private function createDirectoryPath($hash)
+	{
+		if ($hash{0} === '_') {
+			return $hash;
+		}
+
+		return "$hash[0]$hash[1]/$hash[2]$hash[3]";
+	}
+
+
+	/**
+	 * Reads the image type from the given `$filename`, computes the image hash
+	 * and store these information in the given `$meta`.
+	 *
+	 * @param string $filename The file to read the meta-data from
+	 * @param Meta   $meta     The object to store meta-data in
+	 */
+	private function readMeta($filename, Meta $meta)
+	{
+		$info = getimagesize($filename);
+		$meta->setHash($this->hash($filename));
+		$meta->setWidth($info[0]);
+		$meta->setHeight($info[1]);
+		$meta->setType($info[2]);
+	}
+
+
+	/**
+	 * Computes the SHA1 hash for the given file.
+	 *
+	 * @param string $filename The file to compute the hash from
+	 * @return string The SHA1 hash of a file
+	 */
+	private function hash($filename)
+	{
+		return sha1_file($filename);
 	}
 
 
@@ -579,6 +563,40 @@ class ImageStorage extends Object implements Storage
 		$this->baseUrl = $baseUrl;
 
 		return $this;
+	}
+
+
+	public function rotate(Meta $meta, $deg = 90)
+	{
+		$original = $this->createFilename($meta);
+		$backupName = $this->cacheDirectory . '/__rotate-backup';
+
+		// Create rotated image
+		copy($original, $backupName);
+
+		exec(sprintf("convert -rotate $deg -strip %s %s", $original, $backupName));
+
+		// Add new rotated image to storage
+		$this->add(new ImageFile($backupName), $meta);
+
+		unlink($backupName);
+
+		return $this;
+	}
+
+
+	/**
+	 * Adds an image from the given file to the storage.
+	 *
+	 * @param ImageFile $file The image file to add
+	 * @param Meta      $meta
+	 * @return boolean TRUE on success or FALSE on failure
+	 */
+	public function add(ImageFile $file, Meta $meta)
+	{
+		$this->readMeta($file->getName(), $meta);
+
+		return copy($file->getName(), $this->createFilename($meta));
 	}
 
 
