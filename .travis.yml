@@ -34,6 +34,7 @@ after_failure:
 before_script:
     - php -v
     - travis_retry composer update --no-interaction -o PREFER_LOWEST
+    - composer show
 
 sudo: false
 
