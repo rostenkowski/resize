@@ -28,4 +28,5 @@ $output = ob_get_clean();
 Assert::equal(file_get_contents(__DIR__ . $storage->link($request)), $output);
 
 // wipeout testing directories
-$storage->destroy();
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));

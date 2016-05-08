@@ -33,4 +33,6 @@ Assert::exception(function () use ($storage) {
 	$storage->fetch(new ImageRequest($meta));
 }, ImageTypeException::class);
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));

@@ -48,4 +48,6 @@ HTML;
 
 Assert::equal($expected, $s);
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));

@@ -95,6 +95,7 @@
 				<li><a href="class-Rostenkowski.ImageStore.Exceptions.HashException.html">Rostenkowski\ImageStore\Exceptions\HashException</a></li>
 				<li><a href="class-Rostenkowski.ImageStore.Exceptions.ImageFileException.html">Rostenkowski\ImageStore\Exceptions\ImageFileException</a></li>
 				<li><a href="class-Rostenkowski.ImageStore.Exceptions.ImageTypeException.html">Rostenkowski\ImageStore\Exceptions\ImageTypeException</a></li>
+				<li><a href="class-Rostenkowski.ImageStore.Exceptions.InvalidCacheDirectoryException.html">Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException</a></li>
 				<li><a href="class-Rostenkowski.ImageStore.UploaderException.html">Rostenkowski\ImageStore\UploaderException</a></li>
 			</ul>
 
@@ -201,32 +202,19 @@
 </span><span id="70" class="l"><a href="#70">70: </a>
 </span><span id="71" class="l"><a href="#71">71: </a>
 </span><span id="72" class="l"><a href="#72">72: </a>    <span class="php-comment">/**
-</span></span><span id="73" class="l"><a href="#73">73: </a><span class="php-comment">     * Erases the directory.
+</span></span><span id="73" class="l"><a href="#73">73: </a><span class="php-comment">     * Returns TRUE if the compared directory is the same as this, FALSE otherwise.
 </span></span><span id="74" class="l"><a href="#74">74: </a><span class="php-comment">     *
-</span></span><span id="75" class="l"><a href="#75">75: </a><span class="php-comment">     * @return Directory Fluent interface.
-</span></span><span id="76" class="l"><a href="#76">76: </a><span class="php-comment">     */</span>
-</span><span id="77" class="l"><a href="#77">77: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> erase()
-</span><span id="78" class="l"><a href="#78">78: </a>    {
-</span><span id="79" class="l"><a href="#79">79: </a>        <span class="php-keyword2">exec</span>(<span class="php-keyword2">sprintf</span>(<span class="php-quote">&quot;rm -rf %s&quot;</span>, <span class="php-keyword2">escapeshellarg</span>(<span class="php-var">$this</span>-&gt;name) . <span class="php-quote">&quot;/*&quot;</span>));
-</span><span id="80" class="l"><a href="#80">80: </a>
-</span><span id="81" class="l"><a href="#81">81: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="82" class="l"><a href="#82">82: </a>    }
+</span></span><span id="75" class="l"><a href="#75">75: </a><span class="php-comment">     * @param Directory $to
+</span></span><span id="76" class="l"><a href="#76">76: </a><span class="php-comment">     * @return boolean
+</span></span><span id="77" class="l"><a href="#77">77: </a><span class="php-comment">     */</span>
+</span><span id="78" class="l"><a href="#78">78: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> is(Directory <span class="php-var">$to</span>)
+</span><span id="79" class="l"><a href="#79">79: </a>    {
+</span><span id="80" class="l"><a href="#80">80: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">realpath</span>(<span class="php-var">$this</span>-&gt;name) === <span class="php-keyword2">realpath</span>(<span class="php-var">$to</span>-&gt;name);
+</span><span id="81" class="l"><a href="#81">81: </a>    }
+</span><span id="82" class="l"><a href="#82">82: </a>
 </span><span id="83" class="l"><a href="#83">83: </a>
-</span><span id="84" class="l"><a href="#84">84: </a>
-</span><span id="85" class="l"><a href="#85">85: </a>    <span class="php-comment">/**
-</span></span><span id="86" class="l"><a href="#86">86: </a><span class="php-comment">     * Removes the directory.
-</span></span><span id="87" class="l"><a href="#87">87: </a><span class="php-comment">     *
-</span></span><span id="88" class="l"><a href="#88">88: </a><span class="php-comment">     * @return Directory Fluent interface.
-</span></span><span id="89" class="l"><a href="#89">89: </a><span class="php-comment">     */</span>
-</span><span id="90" class="l"><a href="#90">90: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> remove()
-</span><span id="91" class="l"><a href="#91">91: </a>    {
-</span><span id="92" class="l"><a href="#92">92: </a>        <span class="php-keyword2">exec</span>(<span class="php-keyword2">sprintf</span>(<span class="php-quote">&quot;rm -rf %s&quot;</span>, <span class="php-keyword2">escapeshellarg</span>(<span class="php-var">$this</span>-&gt;name)));
-</span><span id="93" class="l"><a href="#93">93: </a>
-</span><span id="94" class="l"><a href="#94">94: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="95" class="l"><a href="#95">95: </a>    }
-</span><span id="96" class="l"><a href="#96">96: </a>
-</span><span id="97" class="l"><a href="#97">97: </a>}
-</span><span id="98" class="l"><a href="#98">98: </a></span></code></pre>
+</span><span id="84" class="l"><a href="#84">84: </a>}
+</span><span id="85" class="l"><a href="#85">85: </a></span></code></pre>
 
 	<div id="footer">
 		Image Store API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -234,6 +222,6 @@
 </div>
 </div>
 <script src="resources/combined.js?0fedbce1d47be40a4d71601ffa137abe69110b92"></script>
-<script src="elementlist.js?51369af0b92469da09d2b0ea7748b13745f3fb3e"></script>
+<script src="elementlist.js?b913edec5f4e07d4ccd84f2b8e5cf8344850e0c2"></script>
 </body>
 </html>

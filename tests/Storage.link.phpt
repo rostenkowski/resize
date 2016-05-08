@@ -105,4 +105,6 @@ Assert::equal($link, $storage->link($request));
 Assert::true(file_exists(__DIR__ . $link));
 Assert::truthy(getimagesize(__DIR__ . $link));
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));

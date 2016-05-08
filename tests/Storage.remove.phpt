@@ -22,4 +22,6 @@ Assert::true($storage->contains($meta));
 $storage->remove($meta);
 Assert::false($storage->contains($meta));
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));

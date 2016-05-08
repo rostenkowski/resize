@@ -11,8 +11,9 @@ use Nette\Utils\Image;
 use Nette\Utils\Strings;
 use Rostenkowski\ImageStore\Directory\Directory;
 use Rostenkowski\ImageStore\Entity\EmptyImage;
-use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Entity\ImageEnvelope;
+use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
+use Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException;
 use Rostenkowski\ImageStore\Files\ImageFile;
 
 /**
@@ -76,6 +77,11 @@ class ImageStorage extends Object implements Storage
 	{
 		$this->directory = new Directory($directory, $tryCreateDirectories);
 		$this->cacheDirectory = new Directory($cacheDirectory, $tryCreateDirectories);
+
+		if ($this->directory->is($this->cacheDirectory)) {
+			throw new InvalidCacheDirectoryException($cacheDirectory);
+		}
+
 		$this->setBaseUrl($baseUrl);
 	}
 
@@ -174,36 +180,6 @@ class ImageStorage extends Object implements Storage
 	private function getExtension($type)
 	{
 		return $this->extensions[$type];
-	}
-
-
-	/**
-	 * Effectively destroys te image storage by removing the storage and the cache directories.
-	 * Warning: Use with caution!
-	 *
-	 * @return ImageStorage Fluent interface
-	 */
-	public function destroy()
-	{
-		$this->directory->remove();
-		$this->cacheDirectory->remove();
-
-		return $this;
-	}
-
-
-	/**
-	 * Erases the entire storage directory (and also the cache directory).
-	 * Warning: Use with caution!
-	 *
-	 * @return ImageStorage Fluent interface
-	 */
-	public function erase()
-	{
-		$this->directory->erase();
-		$this->cacheDirectory->erase();
-
-		return $this;
 	}
 
 
@@ -336,19 +312,6 @@ class ImageStorage extends Object implements Storage
 		header("Content-type: " . $this->getMimeType($request->getMeta()->getType()));
 		fpassthru($fp);
 		fclose($fp);
-
-		return $this;
-	}
-
-
-	/**
-	 * Flushes the entire cache by erasing the cache directory contents.
-	 *
-	 * @return ImageStorage Fluent interface
-	 */
-	public function flush()
-	{
-		$this->cacheDirectory->erase();
 
 		return $this;
 	}
@@ -607,7 +570,7 @@ class ImageStorage extends Object implements Storage
 	 * @param string $baseUrl
 	 * @return $this
 	 */
-	public function setBaseUrl($baseUrl)
+	protected function setBaseUrl($baseUrl)
 	{
 		if (!Strings::endsWith($baseUrl, '/')) {
 			$baseUrl .= '/';

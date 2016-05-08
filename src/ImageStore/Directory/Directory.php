@@ -70,28 +70,15 @@ class Directory extends Object
 
 
 	/**
-	 * Erases the directory.
+	 * Returns TRUE if the compared directory is the same as this, FALSE otherwise.
 	 *
-	 * @return Directory Fluent interface.
+	 * @param Directory $to
+	 * @return boolean
 	 */
-	public function erase()
+	public function is(Directory $to)
 	{
-		exec(sprintf("rm -rf %s/*", escapeshellarg($this->name)));
-
-		return $this;
+		return realpath($this->name) === realpath($to->name);
 	}
 
-
-	/**
-	 * Removes the directory.
-	 *
-	 * @return Directory Fluent interface.
-	 */
-	public function remove()
-	{
-		exec(sprintf("rm -rf %s", escapeshellarg($this->name)));
-
-		return $this;
-	}
 
 }

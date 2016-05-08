@@ -40,14 +40,6 @@ interface Storage
 
 
 	/**
-	 * Flushes the storage image cache.
-	 *
-	 * @return void
-	 */
-	public function flush();
-
-
-	/**
 	 * Creates the URL of the requested image thumbnail.
 	 *
 	 * @param  Request $request

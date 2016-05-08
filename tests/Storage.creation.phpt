@@ -4,6 +4,7 @@ namespace Rostenkowski\ImageStore\Tests;
 
 
 use Rostenkowski\ImageStore\Exceptions\DirectoryException;
+use Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException;
 use Rostenkowski\ImageStore\ImageStorage;
 use Tester\Assert;
 
@@ -22,4 +23,17 @@ Assert::exception(function () {
 	new ImageStorage('non-existing-dir', 'non-existing-dir', '/non-existing-dir/', FALSE); // FALSE: do not try to create directories
 }, DirectoryException::class);
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));
+
+// test: cache dir cannot be the same dir as the storage dir
+Assert::exception(function () {
+	$storeDir = __DIR__ . '/store';
+	new ImageStorage($storeDir, $storeDir);
+
+	// wipeout testing directories
+	exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+
+}, InvalidCacheDirectoryException::class);
+

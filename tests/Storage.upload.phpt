@@ -64,7 +64,9 @@ Assert::exception(function () use ($storage) {
 	]), new ImageEntity());
 }, UploaderException::class, 'No file was uploaded');
 
-$storage->destroy();
+// wipeout testing directories
+exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
+exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));
 
 // delete temp dir
 exec(sprintf("rm -rf %s", escapeshellarg($tmpDir)));
