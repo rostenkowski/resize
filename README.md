@@ -52,7 +52,12 @@ The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3**
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
-## Storage API 
+## API 
+
+For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
+
+### Storage
+
 ```php
 <?php
 
@@ -87,8 +92,6 @@ string $storage->link(Request $request);
 // output requested thumbnail
 void $storage->send(Request $request);
 ```
-
-For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
