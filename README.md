@@ -53,7 +53,7 @@ OK (13 tests, 2.7 seconds)
 ```
 
 To check the code coverage see the `docs/code-coverage.html` file.
-![Coverage Report](https://github.com/rostenkowski/imagestore/raw/master/doc/coverage.png)
+![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
 ## Example
 
