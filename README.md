@@ -78,7 +78,7 @@ It assumes that the **Doctrine's EntityManager** is available trough the applica
 
 ### Configuration
 
-Image macros should be added to the [**Latte engine**](https://latte.nette.org/) as described
+Image macros should be added to the [**Latte**] engine (https://latte.nette.org/) as described
 in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte):
 
 ```yaml
