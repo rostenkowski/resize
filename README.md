@@ -35,7 +35,7 @@ The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3**
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
-The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
+The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
 To run the tests simply install the dependencies
 using [composer](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in **git bash**: `bin/run-tests-win.sh`.
@@ -58,14 +58,13 @@ To check the code coverage see the `docs/coverage.html` file.
 
 ## Usage example
 
-This simple example demonstrates how to use the **ImageStore** library in the [**Nette**](https://doc.nette.org/cs/2.3/quickstart) application
-using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
+This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
-It assumes that the **Doctrine's EntityManager** is available trough the application DI container.
+It assumes that the Doctrine EntityManager is available trough the application DI container.
 
 ### Configuration
 
-Image macros should be added to the [**Latte**] engine (https://latte.nette.org/) as described
+Image macros should be added to the [Latte](https://latte.nette.org/) engine  as described
 in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte):
 
 ```yaml
