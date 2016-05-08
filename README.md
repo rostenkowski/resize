@@ -29,7 +29,7 @@ For the API documentation see the `docs/api/` directory and open `index.html` fi
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
 
-## Tests
+## Compatibility
 The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
@@ -53,7 +53,7 @@ OK (13 tests, 2.7 seconds)
 To check the code coverage see the `docs/coverage.html` file.
 ![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
-## Example
+## Usage example
 
 This simple example demonstrates how to use the **ImageStore** library in the [**Nette**](https://doc.nette.org/cs/2.3/quickstart) application
 using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
