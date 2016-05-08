@@ -76,7 +76,7 @@ class Directory extends Object
 	 */
 	public function erase()
 	{
-		exec(sprintf("rm -rf %s", escapeshellarg($this->name) . "/*"));
+		exec(sprintf("rm -rf %s/*", escapeshellarg($this->name)));
 
 		return $this;
 	}

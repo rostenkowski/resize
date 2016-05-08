@@ -66,4 +66,5 @@ Assert::exception(function () use ($storage) {
 
 $storage->destroy();
 
-exec("rm -rf $tmpDir");
+// delete temp dir
+exec(sprintf("rm -rf %s", escapeshellarg($tmpDir)));
