@@ -1,5 +1,5 @@
 extensions:
-	imageStore: Rostenkowski\ImageStoreExtension
+	imageStore: Rostenkowski\ImageStore\ImageStoreExtension
 
 application:
 	scanDirs: false

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rostenkowski;
+namespace Rostenkowski\ImageStore;
 
 
 use Nette\DI\CompilerExtension;
