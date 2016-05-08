@@ -28,19 +28,13 @@ imageStore:
 	cacheDir:   %baseDir%/www/cache/images
 	basePath:   /cache/images/
 ```
-## Compatibility
+## Requirements 
+- **PHP** Suggested **5.6**, Minimal 5.5
+- **Nette** Suggested **2.3**, Minimal 2.2
+
 The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
-
-### Suggested requirements
-- PHP 5.6
-- Nette 2.3
-
-### Minimal requirements
-- PHP 5.5
-- Nette 2.2
-
 
 ## Storage API 
 ```php
