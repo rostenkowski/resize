@@ -71,7 +71,7 @@ OK (13 tests, 2.2 seconds)
 ## Example
 
 This simple example demonstrates how to use the **ImageStore** library in the [**Nette**](https://doc.nette.org/cs/2.3/quickstart) application
-using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html) library as ORM.
+using the [**Doctrine**](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
 It assumes that the **Doctrine's EntityManager** is available trough the application DI container.
 
