@@ -1,0 +1,10 @@
+extensions:
+	imageStore: Rostenkowski\ImageStoreExtension
+
+application:
+	scanDirs: false
+
+imageStore:
+	storageDir: %baseDir%/storage/images
+	cacheDir:   %baseDir%/www/cache/images
+	basePath:   /cache/images/

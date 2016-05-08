@@ -4,6 +4,8 @@
   "require": {
     "php": ">=5.5.0",
     "nette/application": ">=2.2",
+    "nette/bootstrap": ">=2.2",
+    "nette/di": ">=2.2",
     "nette/http": ">=2.2",
     "latte/latte": ">=2.2",
     "nette/utils": ">=2.2"

@@ -16,6 +16,17 @@ or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally)
 composer require rostenkowski/imagestore
 ```
 
+## Usage
+```yml
+extensions:
+	imageStore: Rostenkowski\ImageStoreExtension
+
+imageStore:
+	storageDir: %baseDir%/storage/images
+	cacheDir:   %baseDir%/www/cache/images
+	basePath:   /cache/images/
+```
+
 ## Minimal requirements
 - PHP 5.5+
 - Nette 2.2+
@@ -57,12 +68,22 @@ To check the code coverage see the `docs/coverage.html` file.
 ![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
 ## Usage example
-
 This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
 It assumes that the Doctrine EntityManager is available trough the application DI container.
 
-### Configuration
+### Configuration using the Nette DI extension
+```yml
+extensions:
+	imageStore: Rostenkowski\ImageStoreExtension
+
+imageStore:
+	storageDir: %baseDir%/storage/images
+	cacheDir:   %baseDir%/www/cache/images
+	basePath:   /cache/images/
+```
+
+#### Manual configuration
 
 Image macros should be added to the [Latte](https://latte.nette.org/) engine  as described
 in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
@@ -73,7 +94,6 @@ nette:
         macros:
             - Rostenkowski\ImageStore\Macro\ImageMacro::install
 ```
-
 
 ### Entity
 
