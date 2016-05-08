@@ -16,7 +16,7 @@ or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally)
 composer require rostenkowski/imagestore
 ```
 
-## Quick configuration
+## Setup
 
 The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/tree/master/app/config). 
 ```yml
@@ -29,7 +29,7 @@ imageStore:
 	basePath:   /images/
 ```
 
-## Manual configuration
+**Manual configuration**
 
 If you aren't using the the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte):
 
