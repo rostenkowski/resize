@@ -52,7 +52,7 @@ PHP 5.6.5 (cgi-fcgi) | php-cgi -n -c tests/php.ini | 1 thread
 OK (13 tests, 2.7 seconds)
 ```
 
-To check the code coverage see the `docs/code-coverage.html` file.
+To check the code coverage see the [`docs/coverage.html`](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.html) file.
 ![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
 ## Example
