@@ -14,6 +14,7 @@ use Rostenkowski\ImageStore\Entity\EmptyImage;
 use Rostenkowski\ImageStore\Entity\ImageEnvelope;
 use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 use Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException;
+use Rostenkowski\ImageStore\Exceptions\UploaderException;
 use Rostenkowski\ImageStore\Files\ImageFile;
 
 /**
@@ -242,7 +243,7 @@ class ImageStorage extends Object implements Storage
 	 * @param  FileUpload $upload
 	 * @param  meta       $meta
 	 * @return ImageStorage Fluent interface
-	 * @throws AbortException
+	 * @throws UploaderException
 	 */
 	public function upload(FileUpload $upload, Meta $meta)
 	{

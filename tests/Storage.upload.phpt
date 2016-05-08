@@ -6,7 +6,7 @@ namespace Rostenkowski\ImageStore\Tests;
 use Nette\Http\FileUpload;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Rostenkowski\ImageStore\ImageStorage;
-use Rostenkowski\ImageStore\UploaderException;
+use Rostenkowski\ImageStore\Exceptions\UploaderException;
 use Tester\Assert;
 
 require_once __DIR__ . '/bootstrap.php';
