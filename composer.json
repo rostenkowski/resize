@@ -3,10 +3,10 @@
   "type": "library",
   "require": {
     "php": ">=5.5.0",
-    "nette/application": "~2.3",
-    "nette/http": "~2.3",
-    "latte/latte": "~2.3",
-    "nette/utils": "~2.3"
+    "nette/application": ">=2.2",
+    "nette/http": ">=2.2",
+    "latte/latte": ">=2.2",
+    "nette/utils": ">=2.2"
   },
   "require-dev": {
     "nette/tester": "dev-master"
