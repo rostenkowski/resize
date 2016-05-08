@@ -31,8 +31,8 @@ $meta = new ImageEntity();
 $tmpDir = __DIR__ . '/tmp';
 $tmpName = uniqid('upload');
 
-exec("mkdir $tmpDir");
-exec("cp $sampleDir/$sampleName $tmpDir/$tmpName");
+mkdir("mkdir $tmpDir");
+copy("$sampleDir/$sampleName", "$tmpDir/$tmpName");
 
 $uploadedFile = new FileUpload([
 	'name'     => $sampleName,
