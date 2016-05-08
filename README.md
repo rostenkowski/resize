@@ -10,7 +10,7 @@ High Performance Image Storage for PHP
 ## Installation
 
 Download the latest [package](https://github.com/rostenkowski/imagestore/releases) manually
-or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally):
+or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally)
 
 ```bash
 composer require rostenkowski/imagestore
@@ -65,7 +65,7 @@ It assumes that the Doctrine EntityManager is available trough the application D
 ### Configuration
 
 Image macros should be added to the [Latte](https://latte.nette.org/) engine  as described
-in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte):
+in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
