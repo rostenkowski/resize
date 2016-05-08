@@ -32,7 +32,7 @@ imageStore:
 - Nette 2.2+
 
 ## API
-For the API documentation see the `docs/api/` directory and open `index.html` file.
+For the API docs see the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
@@ -71,7 +71,7 @@ This simple example demonstrates how to use this library in a [Nette](https://do
 
 It assumes that you have the Doctrine EntityManager available trough the application DI container.
 
-If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
+If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
