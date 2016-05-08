@@ -1,7 +1,8 @@
 
-# ImageStore [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
+# ImageStore 
 
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore) 
+[![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
 High Performance Image Storage for PHP 
@@ -16,6 +17,8 @@ composer require rostenkowski/imagestore
 ```
 
 ## Usage
+
+The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/blob/master/app/config/config.local.neon). 
 ```yml
 extensions:
 	imageStore: Rostenkowski\ImageStoreExtension
@@ -30,8 +33,8 @@ imageStore:
 - PHP 5.5+
 - Nette 2.2+
 
-## API
-For the API documentation see the `docs/api/` directory and open `index.html` file.
+## API 
+For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
@@ -64,28 +67,13 @@ OK (13 tests, 2.7 seconds)
 ```
 
 To check the code coverage see the `docs/coverage.html` file.
-![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
-## Usage example
+## Example usage
 This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
-It assumes that the Doctrine EntityManager is available trough the application DI container.
+It assumes that you have the Doctrine EntityManager available trough the application DI container.
 
-### Configuration using the Nette DI extension
-```yml
-extensions:
-	imageStore: Rostenkowski\ImageStoreExtension
-
-imageStore:
-	storageDir: %baseDir%/storage/images
-	cacheDir:   %baseDir%/www/cache/images
-	basePath:   /cache/images/
-```
-
-#### Manual configuration
-
-Image macros should be added to the [Latte](https://latte.nette.org/) engine  as described
-in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte)
+If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
