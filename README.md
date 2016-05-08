@@ -65,7 +65,6 @@ OK (13 tests, 2.7 seconds)
 ```
 
 To check the code coverage see the `docs/coverage.html` file.
-![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
 ## Example usage
 This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
