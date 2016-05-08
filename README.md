@@ -54,8 +54,10 @@ using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then 
 To check the code coverage see the `docs/code-coverage.html` file.
 
 ```bash
-bin/setup.sh
+# run tests on linux
 bin/run-tests.sh
+# on win u can run eg. in git bash
+bin/run-tests-win.sh
 ```
 
 ```
