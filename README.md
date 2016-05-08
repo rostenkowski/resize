@@ -30,10 +30,49 @@ imageStore:
 ```
 
 ## Minimal requirements
-- PHP 5.5+
-- Nette 2.2+
+- PHP 5.5
+- Nette 2.2
 
-## API 
+## Suggested requirements
+- PHP 5.6
+- Nette 2.3
+
+## Compatibility
+The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
+
+For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
+
+## Storage API 
+```php
+<?php
+
+use Rostenkowski\ImageStore;
+use Nette\Http;
+
+$storage = new ImageStore\ImageStorage('/data/images', '/www/images', '/images/');
+
+// add an image from file
+$storage->add(ImageStore\File $image, ImageStore\Meta $meta);
+// add a HTTP uploaded file
+$storage->upload(Http\FileUpload $file, ImageStore\Meta $meta);
+
+// check that an image already exists in the storage
+$storage->contains(ImageStore\Meta $meta);
+// rotate image
+$storage->rotate(ImageStore\Meta $meta, 90);
+// fetch original
+$storage->original(ImageStore\Meta $meta);
+
+// downloaded requested thumbnail
+$storage->download(ImageStore\Request $request);
+// fetch requested thumbnail
+$storage->fetch(ImageStore\Request $request);
+// link requested thumbnail
+$storage->link(ImageStore\Request $request);
+// output requested thumbnail
+$storage->send(ImageStore\Request $request);
+```
+
 For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
@@ -42,11 +81,6 @@ For the full API documentation navigate to the `docs/api/` directory and open `i
 - The directory tree is well balanced thanks to image hashes used for the directory path creation.
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
-
-## Compatibility
-The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
-
-For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
 ## Contribution
 
