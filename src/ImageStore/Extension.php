@@ -9,7 +9,7 @@ use Nette\Utils\Validators;
 /**
  * The Image Extension
  */
-class ImageStoreExtension extends CompilerExtension
+class Extension extends CompilerExtension
 {
 
 	protected $options = [
