@@ -20,8 +20,7 @@ composer require rostenkowski/imagestore
 - Nette 2.2+
 
 ## API
-
-The API documentation is located in the `docs/api` directory.
+For the API documentation see the `docs/api/` directory and open `index.html` file.
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
@@ -31,7 +30,6 @@ The API documentation is located in the `docs/api` directory.
 - The image thumbnails are created on demand and cached in the cache directory.
 
 ## Tests
-
 The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json):
@@ -52,7 +50,7 @@ PHP 5.6.5 (cgi-fcgi) | php-cgi -n -c tests/php.ini | 1 thread
 OK (13 tests, 2.7 seconds)
 ```
 
-To check the code coverage see the [`docs/coverage.html`](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.html) file.
+To check the code coverage see the `docs/coverage.html` file.
 ![Coverage Report](https://raw.githubusercontent.com/rostenkowski/imagestore/master/docs/coverage.png)
 
 ## Example
