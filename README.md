@@ -37,7 +37,7 @@ For the full list of dependencies see the [`composer.json`](https://github.com/r
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
 To run the tests simply install the dependencies
-using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. **git bash**: `bin/run-tests-win.sh`.
+using [**Composer**](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in **git bash**: `bin/run-tests-win.sh`.
 
 ```
 bin/run-tests.sh
@@ -46,7 +46,9 @@ bin/run-tests.sh
   |_| \___ /___) |_| \___ |_|_\  v2.0.x
 
 PHP 5.6.5 (cgi-fcgi) | php-cgi -n -c tests/php.ini | 1 thread
+
 .............
+
 OK (13 tests, 2.7 seconds)
 ```
 
