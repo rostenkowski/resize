@@ -50,7 +50,7 @@ For the full list of dependencies see the [`composer.json`](https://github.com/r
 
 ## Contribution
 
-Feel free to open an issue pull-request.
+Feel free to open an [Issue](https://github.com/rostenkowski/imagestore/issues) or [Pull Request](https://github.com/rostenkowski/imagestore/pulls).
 
 The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
