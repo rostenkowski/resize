@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
-High Performance Image Storage for PHP 
+*High Performance Image Storage for PHP*
 
 ## Installation
 
@@ -18,7 +18,7 @@ composer require rostenkowski/imagestore
 
 ## Configuration
 
-The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/blob/master/app/config/config.local.neon). 
+The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/tree/master/app/config). 
 ```yml
 extensions:
 	imageStore: Rostenkowski\ImageStore\Extension
