@@ -46,31 +46,36 @@ For the full list of dependencies see the [`composer.json`](https://github.com/r
 ```php
 <?php
 
-use Rostenkowski\ImageStore;
-use Nette\Http;
+use Rostenkowski\ImageStore\Meta;
+use Rostenkowski\ImageStore\File;
+use Rostenkowski\ImageStore\Request;
+use Rostenkowski\ImageStore\ImageStorage;
+use Nette\Application\Responses\FileResponse;
+use Nette\Http\FileUpload;
+use Nette\Utils\Image;
 
-$storage = new ImageStore\ImageStorage('/data/images', '/www/images', '/images/');
+ImageStorage $storage = new ImageStorage('/data/images', '/www/images', '/images/');
 
 // add an image from file
-$storage->add(ImageStore\File $image, ImageStore\Meta $meta);
+void $storage->add(File $image, Meta $meta);
 // add a HTTP uploaded file
-$storage->upload(Http\FileUpload $file, ImageStore\Meta $meta);
+void $storage->upload(FileUpload $file, Meta $meta);
 
 // check that an image already exists in the storage
-$storage->contains(ImageStore\Meta $meta);
-// rotate image
-$storage->rotate(ImageStore\Meta $meta, 90);
+boolean $storage->contains(Meta $meta);
 // fetch original
-$storage->original(ImageStore\Meta $meta);
+Image $storage->original(Meta $meta);
+// rotate image
+void $storage->rotate(Meta $meta, 90);
 
 // downloaded requested thumbnail
-$storage->download(ImageStore\Request $request);
+FileResponse $storage->download(Request $request);
 // fetch requested thumbnail
-$storage->fetch(ImageStore\Request $request);
+Image $storage->fetch(Request $request);
 // link requested thumbnail
-$storage->link(ImageStore\Request $request);
+string $storage->link(Request $request);
 // output requested thumbnail
-$storage->send(ImageStore\Request $request);
+void $storage->send(Request $request);
 ```
 
 For the full API documentation navigate to the `docs/api/` directory and open `index.html` file.
@@ -111,7 +116,7 @@ This simple example demonstrates how to use this library in a [Nette](https://do
 
 It assumes that you have the Doctrine EntityManager available trough the application DI container.
 
-If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
+If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
 
 ```yaml
 nette:
