@@ -19,20 +19,6 @@ composer require rostenkowski/imagestore
 - PHP 5.5+
 - Nette 2.2+
 
-**Notice:** The library is fully compatible with the latest PHP **7.0** and it should be compatible with the Nette version **2.2** and **2.4-dev** but currently it is tested against stable **2.3** branch.
-
-For the full list of dependencies see the [`composer.json`](composer.json):
-```json
-{
-  "require": {
-    "nette/application": "~2.3",
-    "nette/http": "~2.3",
-    "latte/latte": "~2.3",
-    "nette/utils": "~2.3"
-  },
-}
-```
-
 ## API
 
 The API documentation is located in the `docs/api` directory.
@@ -45,6 +31,21 @@ The API documentation is located in the `docs/api` directory.
 - The image thumbnails are created on demand and cached in the cache directory.
 
 ## Tests
+
+**Notice:** The library is tested against PHP **5.5**, **5.6** and the latest **7.0** and Nette **2.2** but it should be compatible with **2.3** and the latest **2.4-dev** but currently it is tested against the lowest **2.2** branch.
+
+For the full list of dependencies see the [`composer.json`](composer.json):
+```json
+{
+  "require": {
+    "nette/application": ">=2.2",
+    "nette/http": ">=2.2",
+    "latte/latte": ">=2.2",
+    "nette/utils": ">=2.2"
+  },
+}
+```
+
 
 The source code of the library is fully covered by [**Nette Tester**](https://tester.nette.org/) tests.
 
@@ -77,7 +78,7 @@ It assumes that the **Doctrine's EntityManager** is available trough the applica
 
 ### Configuration
 
-Image macros should be added to the [**Latte engine**](https://latte.nette.org/) as described
+Image macros should be added to the [**Latte**] engine (https://latte.nette.org/) as described
 in [documentation](https://doc.nette.org/en/2.2/configuring#toc-latte):
 
 ```yaml
