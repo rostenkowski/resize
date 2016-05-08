@@ -28,6 +28,21 @@ imageStore:
 	cacheDir:   %baseDir%/www/cache/images
 	basePath:   /cache/images/
 ```
+
+If you aren't using the the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
+
+```yaml
+# storage service can be registered this way:
+services:
+    - images: Rostenkowski\ImageStore\ImageStorage("%baseDir%/data/images", "%baseDir%/www/images")
+    
+# image macros
+nette:
+    latte:
+        macros:
+            - Rostenkowski\ImageStore\Macro\ImageMacro::install
+```
+
 ## Requirements 
 - **PHP** Suggested **5.6**, Minimal 5.5
 - **Nette** Suggested **2.3**, Minimal 2.2
@@ -109,15 +124,6 @@ To check the code coverage see the `docs/coverage.html` file.
 This simple example demonstrates how to use this library in a [Nette](https://doc.nette.org/cs/2.3/quickstart) application using the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html).
 
 It assumes that you have the Doctrine EntityManager available trough the application DI container.
-
-If you aren't using the DI extension the image macros should be registered to the [Latte](https://latte.nette.org/) engine as described in the [docs](https://doc.nette.org/en/2.2/configuring#toc-latte)
-
-```yaml
-nette:
-    latte:
-        macros:
-            - Rostenkowski\ImageStore\Macro\ImageMacro::install
-```
 
 ### Entity
 
