@@ -9,7 +9,7 @@ High Performance Image Storage for PHP
 
 ## Installation
 
-Download the latest [package](https://github.com/rostenkowski/imagestore/releases)
+Download the latest [package](https://github.com/rostenkowski/imagestore/releases) manually
 or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally):
 
 ```bash
