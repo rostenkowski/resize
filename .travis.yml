@@ -1,5 +1,6 @@
 language: php
 php:
+    - 5.5
     - 5.6
     - 7.0
     - hhvm
@@ -7,8 +8,6 @@ php:
 env:
     - PHP_BIN=php
     - PHP_BIN=php-cgi
-    - PREFER_LOWEST="--prefer-lowest"
-    - PREFER_LOWEST=""
 
 matrix:
 
@@ -21,19 +20,19 @@ matrix:
 
     include:
         - php: 5.6
-          env: dependencies="--prefer-dist" PHP_BIN=php
+          env: DEPS="--prefer-dist" PHP_BIN=php
         - php: 7.0
-          env: coverage="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
+          env: COVERAGE="--coverage ./coverage.xml --coverage-src ./src" PHP_BIN=phpdbg
 
 script:
-    - bin/run-tests.sh 
+    - vendor/bin/tester -j 1 -c tests/php.ini tests/ $COVERAGE
     
 after_failure:
     - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
 
 before_script:
     - travis_retry php -v
-    - travis_retry composer update --no-interaction -o PREFER_LOWEST
+    - travis_retry composer update --no-interaction -o $DEPS
     - travis_retry composer show
 
 sudo: false
