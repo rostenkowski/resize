@@ -38,7 +38,7 @@ For the full API documentation navigate to the `docs/api/` directory and open `i
 
 ## Technical overview
 - The images are stored in regular files in the given directory.
-- The files are split in a directory tree with maximum of 256² directories in two level structure so with ~1K files in a directory the storage is able to store ~6.5M of images without performance impact.
+- The files are organized in a directory tree with maximum of 256² directories in two level structure so with ~1K files in a directory the storage is able to store ~6.5M of images without performance impact.
 - The directory tree is well balanced thanks to image hashes used for the directory path creation.
 - The storage stores only one file even if the same image is stored multiple times.
 - The image thumbnails are created on demand and cached in the cache directory.
