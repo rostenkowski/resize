@@ -16,7 +16,7 @@ or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally)
 composer require rostenkowski/imagestore
 ```
 
-## Usage
+## Configuration
 
 The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration in your [local configuration](https://github.com/nette/sandbox/blob/master/app/config/config.local.neon). 
 ```yml
@@ -48,9 +48,13 @@ The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3**
 
 For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
 
+## Contribution
+
+Feel free to open an [Issue](https://github.com/rostenkowski/imagestore/issues) or [Pull Request](https://github.com/rostenkowski/imagestore/pulls).
+
 The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
-To run the tests simply install the dependencies
+To run the test suite simply install the dependencies
 using [composer](https://getcomposer.org/doc/00-intro.md#globally) and then run the [`bin/run-tests.sh`](bin/run-tests.sh) script on linux. On windows u can run in eg. git bash: `bin/run-tests-win.sh`.
 
 ```
