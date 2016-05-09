@@ -212,5 +212,3 @@ class MyPresenter extends Presenter
 	...
 </div>
 ```
-
-[![Downloads this Month](https://img.shields.io/packagist/dm/rostenkowski/imagestore.svg)](https://packagist.org/packages/rostenkowski/imagestore)
