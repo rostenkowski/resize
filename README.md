@@ -73,23 +73,29 @@ ImageStorage $storage = new ImageStorage('/data/images', '/www/images', '/images
 
 // add an image from file
 void $storage->add(File $image, Meta $meta);
+
 // add a HTTP uploaded file
 void $storage->upload(FileUpload $file, Meta $meta);
 
 // check that an image already exists in the storage
 boolean $storage->contains(Meta $meta);
+
 // fetch original
 Image $storage->original(Meta $meta);
+
 // rotate image
 void $storage->rotate(Meta $meta, 90);
 
 // downloaded requested thumbnail
 FileResponse $storage->download(Request $request);
+
 // fetch requested thumbnail
 Image $storage->fetch(Request $request);
+
 // link requested thumbnail
 string $storage->link(Request $request);
 // output requested thumbnail
+
 void $storage->send(Request $request);
 ```
 
