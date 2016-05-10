@@ -69,6 +69,7 @@ use Nette\Application\Responses\FileResponse;
 use Nette\Http\FileUpload;
 use Nette\Utils\Image;
 
+// create storage
 ImageStorage $storage = new ImageStorage('/data/images', '/www/images', '/images/');
 
 // add an image from file
@@ -94,8 +95,8 @@ Image $storage->fetch(Request $request);
 
 // link requested thumbnail
 string $storage->link(Request $request);
-// output requested thumbnail
 
+// output requested thumbnail to stdout
 void $storage->send(Request $request);
 ```
 
