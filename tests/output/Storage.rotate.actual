@@ -1,1 +1,9 @@
-/home/spot/imagestore/tests/store/b4/d8/b4d8d1e46333e42b4ede050da2d12552eb78335a.jpg
+[
+	1279,
+	1920,
+	2,
+	'width="1279" height="1920"',
+	'bits' => 8,
+	'channels' => 3,
+	'mime' => 'image/jpeg',
+]
