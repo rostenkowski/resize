@@ -133,5 +133,5 @@ To check the code coverage see the `docs/coverage.html` file.
 
 ## Example code 
 
-Please see the [**Usage** wiki page](https://github.com/rostenkowski/imagestore/wiki/usage)
+Please see the [**Usage**](https://github.com/rostenkowski/imagestore/wiki/usage) wiki page.
 
