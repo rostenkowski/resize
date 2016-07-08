@@ -14,7 +14,7 @@ $dir = dirname(__DIR__);
 
 require "$dir/vendor/autoload.php";
 
-mkdir("$dir/tests/temp", 0755);
+@mkdir("$dir/tests/temp", 0755);
 
 $configurator = new Configurator();
 $configurator->setTempDirectory("$dir/tests/temp");
@@ -37,7 +37,7 @@ Assert::noError(function () use ($container) {
 
 	// install "not found" image
 	$sampleDir = __DIR__ . '/sample-images';
-	mkdir("$storeDir/_empty", 0755, TRUE);
+	@mkdir("$storeDir/_empty", 0755, TRUE);
 	copy("$sampleDir/_empty.png", "$storeDir/_empty/_empty.png");
 
 	$meta = new ImageEntity();

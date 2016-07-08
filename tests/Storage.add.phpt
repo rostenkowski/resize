@@ -33,6 +33,11 @@ Assert::exception(function () use ($storage) {
 
 Assert::true($storage->contains($meta));
 
+// test: download image from URL
+$url = 'https://avatars2.githubusercontent.com/u/168612?v=3&s=64';
+$storage->add(new ImageFile($url), $meta);
+Assert::true($storage->contains($meta));
+
 // wipeout testing directories
 exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
 exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));
