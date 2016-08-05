@@ -9,7 +9,7 @@ env:
     - PHP_BIN=php-cgi
 
 script:
-    - bin/run-tests.sh
+    - bin/generate-coverage-report.sh
     
 after_failure:
     - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
