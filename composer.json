@@ -13,7 +13,8 @@
   "require-dev": {
     "ext-tokenizer": "*",
     "ext-json": "*",
-    "nette/tester": "^1.7"
+    "nette/tester": "^1.7",
+    "codeclimate/php-test-reporter": "dev-master"
   },
   "suggest": {
     "ext-imagick": "to use rotate()"
