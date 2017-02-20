@@ -1,0 +1,8 @@
+before_script:
+  - ./bin/setup.sh
+
+unit_tests:
+  script:
+    - ./bin/run-tests.sh
+    
+    
