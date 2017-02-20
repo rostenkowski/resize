@@ -1,8 +1,7 @@
 before_script:
-  - ./bin/setup.sh
+  - apt-get install -y php-gd
+  - curl -sS https://getcomposer.org/installer | php
 
 unit_tests:
   script:
     - ./bin/run-tests.sh
-    
-    
