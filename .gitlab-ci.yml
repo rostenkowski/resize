@@ -1,5 +1,5 @@
 before_script:
-  - apt-get install -y php-gd
+  - sudo apt-get install -y php-gd
   - curl -sS https://getcomposer.org/installer | php
 
 unit_tests:
