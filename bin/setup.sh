@@ -15,6 +15,5 @@ sudo apt-get install \
 
 # composer
 curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
 
-composer update -o --prefer-dist
+php composer.phar install -o --prefer-dist
