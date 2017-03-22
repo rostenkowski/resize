@@ -1,14 +1,14 @@
 {
   "name": "rostenkowski/imagestore",
   "type": "library",
+  "minimum-stability": "dev",
   "require": {
-    "php": ">=5.5.0",
-    "nette/application": "^2.2",
-    "nette/bootstrap": "^2.2",
-    "nette/di": "^2.2",
-    "nette/http": "^2.2",
-    "latte/latte": "^2.2",
-    "nette/utils": "^2.2"
+    "nette/application": "^3.0",
+    "nette/bootstrap": "^3.0",
+    "nette/di": "^3.0",
+    "nette/http": "^3.0",
+    "latte/latte": "^3.0",
+    "nette/utils": "^3.0"
   },
   "require-dev": {
     "ext-tokenizer": "*",

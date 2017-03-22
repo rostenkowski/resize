@@ -12,7 +12,9 @@ use Nette\Utils\Validators;
 class Extension extends CompilerExtension
 {
 
-	protected $options = [
+	protected $options = [];
+
+	protected $defaults = [
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
 		'basePath'     => '/cache/images/',
@@ -26,7 +28,8 @@ class Extension extends CompilerExtension
 
 	public function loadConfiguration()
 	{
-		$this->options = $this->getConfig($this->options, TRUE);
+		$this->options = $this->validateConfig($this->defaults);
+
 		$builder = $this->getContainerBuilder();
 
 		// Image storage
