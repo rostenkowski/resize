@@ -32,8 +32,6 @@ class Extension extends CompilerExtension
 
 		$builder = $this->getContainerBuilder();
 
-		\Tracy\Debugger::barDump();
-
 		// Image storage
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [$this->options['storageDir'], $this->options['cacheDir'], $this->options['basePath']]);

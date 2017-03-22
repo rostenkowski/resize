@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4eabf8daaa575a95cb041a2a15c947a7",
-    "content-hash": "f0db0977aee872ab9d507bf1d556f887",
+    "hash": "477300adacb038ed5d776697c5534f95",
+    "content-hash": "bf79105135e54114d0d4fcaf7217c1dc",
     "packages": [
         {
             "name": "latte/latte",
@@ -645,6 +645,73 @@
                 "validation"
             ],
             "time": "2017-03-14 16:47:44"
+        },
+        {
+            "name": "tracy/tracy",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/tracy.git",
+                "reference": "d992b9bdac4fecd06924956f604692d19222c674"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/d992b9bdac4fecd06924956f604692d19222c674",
+                "reference": "d992b9bdac4fecd06924956f604692d19222c674",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-session": "*",
+                "php": ">=5.4.4"
+            },
+            "require-dev": {
+                "nette/di": "~2.3",
+                "nette/tester": "~2.0"
+            },
+            "suggest": {
+                "https://nette.org/donate": "\u001b[1;37;42m Please consider supporting Tracy via a donation \u001b[0m"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ],
+                "files": [
+                    "src/shortcuts.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "😎 Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
+            "homepage": "https://tracy.nette.org",
+            "keywords": [
+                "Xdebug",
+                "debug",
+                "debugger",
+                "nette",
+                "profiler"
+            ],
+            "time": "2017-03-03 15:58:04"
         }
     ],
     "packages-dev": [
@@ -1139,12 +1206,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0"
+                "reference": "587bf9dadb89773ab2a0e8853f5e524e859cd79c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0",
-                "reference": "6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0",
+                "url": "https://api.github.com/repos/symfony/console/zipball/587bf9dadb89773ab2a0e8853f5e524e859cd79c",
+                "reference": "587bf9dadb89773ab2a0e8853f5e524e859cd79c",
                 "shasum": ""
             },
             "require": {
@@ -1199,7 +1266,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-22 18:41:00"
+            "time": "2017-03-22 21:42:42"
         },
         {
             "name": "symfony/debug",
