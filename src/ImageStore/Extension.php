@@ -18,8 +18,8 @@ class Extension extends CompilerExtension
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
 		'basePath'     => '/cache/images/',
-		'cacheDir'     => '%baseDir%/www/cache/images',
-		'storageDir'   => '%baseDir%/storage/images',
+		'cacheDir'     => 'www/cache/images',
+		'storageDir'   => 'storage/images',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
@@ -33,8 +33,13 @@ class Extension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		// Image storage
+		$baseDir = $builder->parameters['baseDir'];
 		$builder->addDefinition($this->prefix('storage'))
-			->setClass($this->options['storageClass'], [$this->options['storageDir'], $this->options['cacheDir'], $this->options['basePath']]);
+			->setClass($this->options['storageClass'], [
+				$baseDir . $this->options['storageDir'],
+				$baseDir . $this->options['cacheDir'],
+				$this->options['basePath'],
+			]);
 
 		// Latte macros
 		$this->addMacros($this->options);
