@@ -33,11 +33,12 @@ class Extension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		// Image storage
-		$baseDir = $builder->parameters['baseDir'];
+		$appDir = $builder->parameters['appDir'];
+		$wwwDir = $builder->parameters['wwwDir'];
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [
-				$baseDir . $this->options['storageDir'],
-				$baseDir . $this->options['cacheDir'],
+				$appDir . '/../' . $this->options['storageDir'],
+				$wwwDir . $this->options['cacheDir'],
 				$this->options['basePath'],
 			]);
 
