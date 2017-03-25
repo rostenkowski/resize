@@ -34,14 +34,14 @@ class Extension extends CompilerExtension
 		// Image storage
 		$appDir = $builder->parameters['appDir'];
 		$wwwDir = $builder->parameters['wwwDir'];
-		
+
 		Debugger::barDump($appDir, 'appDir');
 		Debugger::barDump($wwwDir, 'wwwDir');
-		
+
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [
 				$appDir . '/../' . $this->options['storageDir'],
-				$wwwDir . $this->options['cacheDir'],
+				$wwwDir . '/' . $this->options['cacheDir'],
 				$this->options['basePath'],
 			]);
 
