@@ -31,6 +31,8 @@ class Extension extends CompilerExtension
 
 		$builder = $this->getContainerBuilder();
 
+		Debugger::barDump($this->options, 'imagestore options');
+
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [
 				$this->options['storageDir'],
