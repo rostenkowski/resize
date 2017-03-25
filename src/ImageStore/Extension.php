@@ -18,8 +18,8 @@ class Extension extends CompilerExtension
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
 		'basePath'     => '/cache/images/',
-		'cacheDir'     => 'www/cache/images',
-		'storageDir'   => 'storage/images',
+		'cacheDir'     => '%wwwDir/cache/images',
+		'storageDir'   => '%appDir%/../storage/images',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
