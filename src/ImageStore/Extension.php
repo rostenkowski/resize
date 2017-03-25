@@ -5,6 +5,7 @@ namespace Rostenkowski\ImageStore;
 
 use Nette\DI\CompilerExtension;
 use Nette\Utils\Validators;
+use Tracy\Debugger;
 
 /**
  * The Image Extension
@@ -12,14 +13,12 @@ use Nette\Utils\Validators;
 class Extension extends CompilerExtension
 {
 
-	protected $options = [];
-
-	protected $defaults = [
+	protected $options = [
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
 		'basePath'     => '/cache/images/',
-		'cacheDir'     => '%wwwDir/cache/images',
-		'storageDir'   => '%appDir%/../storage/images',
+		'cacheDir'     => 'cache/images',
+		'storageDir'   => 'storage/images',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
@@ -28,13 +27,17 @@ class Extension extends CompilerExtension
 
 	public function loadConfiguration()
 	{
-		$this->options = $this->validateConfig($this->defaults);
+		$this->options = $this->validateConfig($this->options);
 
 		$builder = $this->getContainerBuilder();
 
 		// Image storage
 		$appDir = $builder->parameters['appDir'];
 		$wwwDir = $builder->parameters['wwwDir'];
+		
+		Debugger::barDump($appDir, 'appDir');
+		Debugger::barDump($wwwDir, 'wwwDir');
+		
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [
 				$appDir . '/../' . $this->options['storageDir'],
