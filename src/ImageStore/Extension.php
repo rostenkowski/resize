@@ -16,9 +16,9 @@ class Extension extends CompilerExtension
 	protected $options = [
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
-		'basePath'     => '/cache/images/',
-		'cacheDir'     => 'cache/images',
-		'storageDir'   => 'storage/images',
+		'basePath'     => '/images/',
+		'cacheDir'     => '/mnt/image-cache',
+		'storageDir'   => '/mnt/image-storage',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
@@ -31,17 +31,10 @@ class Extension extends CompilerExtension
 
 		$builder = $this->getContainerBuilder();
 
-		// Image storage
-		$appDir = $builder->parameters['appDir'];
-		$wwwDir = $builder->parameters['wwwDir'];
-
-		Debugger::barDump($appDir, 'appDir');
-		Debugger::barDump($wwwDir, 'wwwDir');
-
 		$builder->addDefinition($this->prefix('storage'))
 			->setClass($this->options['storageClass'], [
-				$appDir . '/../' . $this->options['storageDir'],
-				$wwwDir . '/' . $this->options['cacheDir'],
+				$this->options['storageDir'],
+				$this->options['cacheDir'],
 				$this->options['basePath'],
 			]);
 
