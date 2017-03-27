@@ -16,18 +16,29 @@ class Extension extends CompilerExtension
 	protected $options = [
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
-		'basePath'     => '/images/',
-		'cacheDir'     => '/mnt/image-cache',
-		'storageDir'   => '/mnt/image-storage',
+		'basePath'     => '/cache/images/',
+		'cacheDir'     => '%wwwDir%/cache/images',
+		'storageDir'   => '%baseDir%/storage/images',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
 	];
 
 
+	/**
+	 * todo: this method may be removed (changed) when the load configuration api is stabilized
+	 */
+	private function LOAD_VALIDATE_AND_EXPAND_CONFIGURATION()
+	{
+		$this->options = Helpers::expand($this->validateConfig($this->options, $this->getConfig()), $this->getContainerBuilder()->parameters);
+
+		Debugger::barDump($this->options, $this->name . ' options');
+	}
+
+
 	public function loadConfiguration()
 	{
-		$this->options = $this->validateConfig($this->options);
+		$this->LOAD_VALIDATE_AND_EXPAND_CONFIGURATION();
 
 		$builder = $this->getContainerBuilder();
 
