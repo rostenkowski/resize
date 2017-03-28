@@ -15,6 +15,7 @@ class Extension extends CompilerExtension
 {
 
 	protected $options = [
+		'baseDir'      => '%appDir%/../',
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
 		'basePath'     => '/cache/images/',
@@ -37,7 +38,6 @@ class Extension extends CompilerExtension
 
 		Debugger::barDump($this->options, "$this->name options");
 	}
-
 
 
 	public function loadConfiguration()
