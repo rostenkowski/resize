@@ -8,13 +8,14 @@
     "nette/di": "^3.0",
     "nette/http": "^3.0",
     "latte/latte": "^3.0",
+    "nette/finder": "^3.0",
     "nette/utils": "^3.0",
     "tracy/tracy": "^2.4"
   },
   "require-dev": {
     "ext-tokenizer": "*",
     "ext-json": "*",
-    "nette/tester": "^1.7",
+    "nette/tester": "dev-master",
     "codeclimate/php-test-reporter": "dev-master"
   },
   "suggest": {
