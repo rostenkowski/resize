@@ -4,6 +4,7 @@ namespace Rostenkowski\ImageStore;
 
 
 use Nette\DI\CompilerExtension;
+use Nette\DI\Helpers;
 use Nette\Utils\Validators;
 use Tracy\Debugger;
 
@@ -26,19 +27,22 @@ class Extension extends CompilerExtension
 
 
 	/**
-	 * todo: this method may be removed (changed) when the load configuration api is stabilized
+	 * validate and expand the configuration options
+	 *
+	 * todo: this method may change when the configuration api is stabilized
 	 */
-	private function LOAD_VALIDATE_AND_EXPAND_CONFIGURATION()
+	protected function setupOptions(): void
 	{
 		$this->options = Helpers::expand($this->validateConfig($this->options, $this->getConfig()), $this->getContainerBuilder()->parameters);
 
-		Debugger::barDump($this->options, $this->name . ' options');
+		Debugger::barDump($this->options, "$this->name options");
 	}
+
 
 
 	public function loadConfiguration()
 	{
-		$this->LOAD_VALIDATE_AND_EXPAND_CONFIGURATION();
+		$this->setupOptions();
 
 		$builder = $this->getContainerBuilder();
 
