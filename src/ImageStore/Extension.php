@@ -8,19 +8,15 @@ use Nette\DI\Helpers;
 use Nette\Utils\Validators;
 use Tracy\Debugger;
 
-/**
- * The Image Extension
- */
 class Extension extends CompilerExtension
 {
 
 	protected $options = [
-		'baseDir'      => '%appDir%/../',
 		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
 		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
-		'basePath'     => '/cache/images/',
+		'storageDir'   => '%appDir%/../storage/images',
 		'cacheDir'     => '%wwwDir%/cache/images',
-		'storageDir'   => '%baseDir%/storage/images',
+		'basePath'     => '/cache/images/',
 		'macros'       => [
 			'Rostenkowski\ImageStore\Macro\ImageMacro',
 		],
