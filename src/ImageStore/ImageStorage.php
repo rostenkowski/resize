@@ -421,7 +421,7 @@ class ImageStorage extends Object implements Storage
 	 */
 	private function getExtension($type)
 	{
-		if (!key_exists($this, $this->extensions)) {
+		if (!$type || !key_exists($type, $this->extensions)) {
 
 			// SILENT DEATH
 			return 'jpg';
