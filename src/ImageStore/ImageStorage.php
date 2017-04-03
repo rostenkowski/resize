@@ -423,9 +423,10 @@ class ImageStorage extends Object implements Storage
 	{
 		if (!$type || !key_exists($type, $this->extensions)) {
 
-			// SILENT DEATH
-			return 'jpg';
+			// SUDDEN DEATH
+			throw new \Exception('images: get extension for type ' . var_export($type, TRUE) . ' not found');
 		}
+
 		return $this->extensions[$type];
 	}
 
