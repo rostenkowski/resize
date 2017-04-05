@@ -17,7 +17,7 @@ trait HasImage
 	 *
 	 * @var string
 	 */
-	private $imageHash;
+	private $hash;
 
 	/**
 	 * Original image type as defined in the `Image` class constants `JPEG`, `GIF` and `PNG`.
@@ -25,39 +25,39 @@ trait HasImage
 	 *
 	 * @var integer
 	 */
-	private $imageType;
+	private $type;
 
 	/**
 	 * @Column(type="integer", nullable=true)
 	 *
 	 * @var integer
 	 */
-	private $imageWidth;
+	private $width;
 
 	/**
 	 * @Column(type="integer", nullable=true)
 	 *
 	 * @var integer
 	 */
-	private $imageHeight;
+	private $height;
 
 
 	/**
 	 * @return string
 	 */
-	public function getImageHash()
+	public function getHash()
 	{
-		return $this->imageHash;
+		return $this->hash;
 	}
 
 
 	/**
-	 * @param  string $imageHash
+	 * @param  string $hash
 	 * @return ImageEntity
 	 */
-	public function setImageHash($imageHash)
+	public function setHash($hash)
 	{
-		$this->imageHash = $this->checkHash($imageHash);
+		$this->hash = $this->checkHash($hash);
 
 		return $this;
 	}
@@ -66,9 +66,9 @@ trait HasImage
 	/**
 	 * @return integer
 	 */
-	public function getImageType()
+	public function getType()
 	{
-		return $this->imageType;
+		return $this->type;
 	}
 
 
@@ -94,12 +94,12 @@ trait HasImage
 
 
 	/**
-	 * @param  integer $imageType
+	 * @param  integer $type
 	 * @return ImageEntity
 	 */
-	public function setImageType($imageType)
+	public function setType($type)
 	{
-		$this->imageType = $this->checkType($imageType);
+		$this->type = $this->checkType($type);
 
 		return $this;
 	}
@@ -125,35 +125,35 @@ trait HasImage
 	/**
 	 * @return integer
 	 */
-	public function getImageHeight()
+	public function getHeight()
 	{
-		return $this->imageHeight;
+		return $this->height;
 	}
 
 
 	/**
-	 * @param integer $imageHeight
+	 * @param integer $height
 	 */
-	public function setImageHeight($imageHeight)
+	public function setHeight($height)
 	{
-		$this->imageHeight = $imageHeight;
+		$this->height = $height;
 	}
 
 
 	/**
 	 * @return integer
 	 */
-	public function getImageWidth()
+	public function getWidth()
 	{
-		return $this->imageWidth;
+		return $this->width;
 	}
 
 
 	/**
-	 * @param integer $imageWidth
+	 * @param integer $width
 	 */
-	public function setImageWidth($imageWidth)
+	public function setWidth($width)
 	{
-		$this->imageWidth = $imageWidth;
+		$this->width = $width;
 	}
 }
