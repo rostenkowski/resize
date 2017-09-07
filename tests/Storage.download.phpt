@@ -23,7 +23,7 @@ $response = $storage->download(new ImageRequest($meta));
 
 Assert::equal('e97c1cb54b3312f503825474cea49589e4cc3b5d.0.0.0.jpg', $response->getName());
 Assert::equal(__DIR__ . '/cache/e9/7c/e97c1cb54b3312f503825474cea49589e4cc3b5d.0.0.0.jpg', $response->getFile());
-Assert::equal(2, $response->getContentType());
+Assert::equal('2', $response->getContentType());
 
 // wipeout testing directories
 exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
