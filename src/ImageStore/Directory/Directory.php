@@ -45,7 +45,7 @@ class Directory extends Object
 			$exists = FALSE;
 			if ($tryCreateDirectories) {
 				umask(0002);
-				$exists = @mkdir($name, 0750, TRUE); // @: will be escalated to exception on failure
+				$exists = @mkdir($name, 0755, TRUE); // @: will be escalated to exception on failure
 			}
 		}
 		if (!is_writable($name)) {
