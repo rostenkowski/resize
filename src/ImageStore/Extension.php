@@ -43,7 +43,7 @@ class Extension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		$builder->addDefinition($this->prefix('storage'))
-			->setClass($this->options['storageClass'], [
+			->setFactory($this->options['storageClass'], [
 				$this->options['storageDir'],
 				$this->options['cacheDir'],
 				$this->options['basePath'],
