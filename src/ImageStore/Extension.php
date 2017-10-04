@@ -3,6 +3,7 @@
 namespace Rostenkowski\ImageStore;
 
 
+use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Helpers;
 use Nette\Utils\Validators;
@@ -64,7 +65,7 @@ class Extension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		if (array_key_exists('macros', $options) && is_array($options['macros'])) {
-			$factory = $builder->getDefinition('nette.latteFactory');
+			$factory = $builder->getDefinition($builder->getByType(ILatteFactory::class));
 			foreach ($options['macros'] as $macro) {
 				if (strpos($macro, '::') === FALSE && class_exists($macro)) {
 					$macro .= '::install';

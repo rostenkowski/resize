@@ -1,15 +1,22 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Tests;
+namespace Rostenkowski\ImageStore;
+
 
 use Tester\Environment;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-// reset testing directories
-$storeDir = __DIR__ . '/store';
-$cacheDir = __DIR__ . '/cache';
-exec(sprintf('rm -rf %s', escapeshellarg($storeDir)));
-exec(sprintf('rm -rf %s', escapeshellarg($cacheDir)));
+define('TEMP_DIR', __DIR__ . '/temp/' . (string) lcg_value());
+define('STORE_DIR', TEMP_DIR . '/store');
+define('CACHE_DIR', TEMP_DIR . '/cache');
+define('SAMPLE_DIR', __DIR__ . '/samples');
+
+@mkdir(TEMP_DIR, 0755, true);
+@mkdir(STORE_DIR);
+@mkdir(CACHE_DIR);
+@mkdir(STORE_DIR . '/_empty');
+
+copy(SAMPLE_DIR . '/_empty.png', STORE_DIR . '/_empty/_empty.png');
 
 Environment::setup();

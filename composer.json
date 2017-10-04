@@ -1,10 +1,8 @@
 {
-  "name": "avvivy/imagestore",
+  "name": "rostenkowski/imagestore",
   "type": "library",
   "minimum-stability": "dev",
   "require": {
-    "nette/application": "^3.0",
-    "nette/bootstrap": "^3.0",
     "nette/di": "^3.0",
     "nette/http": "^3.0",
     "latte/latte": "^3.0",
@@ -13,8 +11,10 @@
     "tracy/tracy": "^2.4"
   },
   "require-dev": {
+    "ext-gd": "*",
     "ext-tokenizer": "*",
     "ext-json": "*",
+    "ext-mbstring": "*",
     "nette/tester": "dev-master",
     "codeclimate/php-test-reporter": "dev-master"
   },

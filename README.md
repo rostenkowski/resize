@@ -1,7 +1,12 @@
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore) 
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
+
 [![Code Climate](https://codeclimate.com/github/rostenkowski/imagestore/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)       
+
+
+[![Test Coverage](https://codeclimate.com/github/rostenkowski/imagestore/badges/coverage.svg)](https://codeclimate.com/github/rostenkowski/imagestore/coverage)
+[![Issue Count](https://codeclimate.com/github/rostenkowski/imagestore/badges/issue_count.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
 
 *High Performance Image Storage for PHP*
 
@@ -68,34 +73,34 @@ use Nette\Http\FileUpload;
 use Nette\Utils\Image;
 
 // create storage
-ImageStorage $storage = new ImageStorage('/data/images', '/www/images', '/images/');
+$storage = new ImageStorage('/data/images', '/www/images', '/images/');
 
 // add an image from file
-void $storage->add(File $image, Meta $meta);
+$storage->add(File $image, Meta $meta);
 
 // add a HTTP uploaded file
-void $storage->upload(FileUpload $file, Meta $meta);
+$storage->upload(FileUpload $file, Meta $meta);
 
 // check that an image already exists in the storage
-boolean $storage->contains(Meta $meta);
+$storage->contains(Meta $meta);
 
 // fetch original
-Image $storage->original(Meta $meta);
+$storage->original(Meta $meta);
 
 // rotate image
-void $storage->rotate(Meta $meta, 90);
+$storage->rotate(Meta $meta, 90);
 
 // downloaded requested thumbnail
-FileResponse $storage->download(Request $request);
+$storage->download(Request $request);
 
 // fetch requested thumbnail
-Image $storage->fetch(Request $request);
+$storage->fetch(Request $request);
 
 // link requested thumbnail
-string $storage->link(Request $request);
+$storage->link(Request $request);
 
 // output requested thumbnail to stdout
-void $storage->send(Request $request);
+$storage->send(Request $request);
 ```
 
 ## Technical overview

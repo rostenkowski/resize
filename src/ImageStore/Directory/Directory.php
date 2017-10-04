@@ -3,13 +3,12 @@
 namespace Rostenkowski\ImageStore\Directory;
 
 
-use Nette\Object;
 use Rostenkowski\ImageStore\Exceptions\DirectoryException;
 
 /**
  * Directory wrapper
  */
-class Directory extends Object
+class Directory
 {
 
 	/**
@@ -22,7 +21,7 @@ class Directory extends Object
 	 * @param string  $name
 	 * @param boolean $tryCreateDirectories
 	 */
-	public function __construct($name, $tryCreateDirectories = TRUE)
+	public function __construct($name, $tryCreateDirectories = true)
 	{
 		$this->name = $this->check($name, $tryCreateDirectories);
 	}
@@ -36,20 +35,20 @@ class Directory extends Object
 	 * @param boolean $tryCreateDirectories
 	 * @return string Existing and writable directory name
 	 */
-	private function check($name, $tryCreateDirectories = TRUE)
+	private function check($name, $tryCreateDirectories = true)
 	{
-		$exists = TRUE;
-		$isWritable = TRUE;
+		$exists = true;
+		$isWritable = true;
 
 		if (!file_exists($name)) {
-			$exists = FALSE;
+			$exists = false;
 			if ($tryCreateDirectories) {
 				umask(0002);
-				$exists = @mkdir($name, 0775, TRUE); // @: will be escalated to exception on failure
+				$exists = @mkdir($name, 0775, true); // @: will be escalated to exception on failure
 			}
 		}
 		if (!is_writable($name)) {
-			$isWritable = FALSE;
+			$isWritable = false;
 		}
 
 		if (!$exists || !$isWritable) {

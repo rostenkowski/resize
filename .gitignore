@@ -1,5 +1,4 @@
-.idea/*
-vendor/*
-tests/output/*
-tests/temp/*
-tests/tmp/*
+vendor
+tests/output
+tests/temp
+tests/tmp
