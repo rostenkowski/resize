@@ -2,7 +2,7 @@
 
 *High Performance Image Storage Library for PHP 7*
 
-[![release](http://github-release-version.herokuapp.com/github/rostenkowski/resize/release.svg?style=flat)](https://github.com/rostenkowski/imagestore/releases/latest)
+[![Release](http://github-release-version.herokuapp.com/github/rostenkowski/resize/release.svg?style=flat)](https://github.com/rostenkowski/imagestore/releases/latest)
 [![Build Status](https://travis-ci.org/rostenkowski/resize.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![Coverage Status](https://coveralls.io/repos/github/rostenkowski/resize/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
 [![Code Climate](https://codeclimate.com/github/rostenkowski/resize/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
