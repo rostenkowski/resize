@@ -24,7 +24,7 @@ Assert::noError(function () {
 	$loader = new  ContainerLoader(TEMP_DIR, true);
 	$class = $loader->load(function (Compiler $compiler) {
 		$compiler->addExtension('latte', new LatteExtension(TEMP_DIR, false));
-		$compiler->addExtension('images', new Extension());
+		$compiler->addExtension('images', new ImageStore());
 		$compiler->addConfig([
 			'images' => [
 				'storageDir' => STORE_DIR,
