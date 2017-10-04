@@ -3,7 +3,6 @@
 namespace Rostenkowski\ImageStore\Requests;
 
 
-use Nette\Object;
 use Nette\Utils\Image;
 use Rostenkowski\ImageStore\Entity\EmptyImage;
 use Rostenkowski\ImageStore\Meta;
@@ -12,7 +11,7 @@ use Rostenkowski\ImageStore\Request;
 /**
  * Image request encapsulation
  */
-class ImageRequest extends Object implements Request
+class ImageRequest implements Request
 {
 
 	/**
@@ -41,7 +40,7 @@ class ImageRequest extends Object implements Request
 	 *
 	 * @var boolean
 	 */
-	private $crop = FALSE;
+	private $crop = false;
 
 
 	/**
@@ -52,7 +51,7 @@ class ImageRequest extends Object implements Request
 	 * @param integer $flags
 	 * @param boolean $crop
 	 */
-	public function __construct(Meta $meta, $dimensions = Request::ORIGINAL, $flags = Request::ORIGINAL, $crop = FALSE)
+	public function __construct(Meta $meta, $dimensions = Request::ORIGINAL, $flags = Request::ORIGINAL, $crop = false)
 	{
 		$this->meta = $meta;
 		$this->dimensions = $dimensions;
@@ -77,7 +76,7 @@ class ImageRequest extends Object implements Request
 		$dimensions = isset($args[0]) ? $args[0] : Request::ORIGINAL;
 		$flags = Image::FIT;
 
-		$request = new ImageRequest($image, $dimensions, $flags, TRUE);
+		$request = new ImageRequest($image, $dimensions, $flags, true);
 
 		return $request;
 	}
