@@ -1,6 +1,6 @@
 <?php
 
-namespace Rostenkowski;
+namespace Rostenkowski\ImageStore;
 
 
 use Nette\DI\CompilerExtension;
@@ -8,7 +8,7 @@ use Nette\DI\Helpers;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Rostenkowski\ImageStore\Macro\ImageMacro;
 
-class ImageStore extends CompilerExtension
+class Extension extends CompilerExtension
 {
 
 	protected $defaults = [
