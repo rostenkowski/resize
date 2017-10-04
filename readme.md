@@ -6,7 +6,6 @@
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![Coverage Status](https://coveralls.io/repos/github/rostenkowski/imagestore/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
 [![Code Climate](https://codeclimate.com/github/rostenkowski/imagestore/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
-[![Daily Downloads](https://poser.pugx.org/rostenkowski/imagestore/d/daily)](https://packagist.org/packages/rostenkowski/imagestore)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
 
 
