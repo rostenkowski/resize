@@ -1,14 +1,15 @@
+# ImageStore
+
+*High Performance Image Storage for PHP*
+
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore) 
 [![Latest Stable Version](https://poser.pugx.org/rostenkowski/imagestore/v/stable)](https://github.com/rostenkowski/imagestore/releases)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
-
 [![Code Climate](https://codeclimate.com/github/rostenkowski/imagestore/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)       
-
-
 [![Test Coverage](https://codeclimate.com/github/rostenkowski/imagestore/badges/coverage.svg)](https://codeclimate.com/github/rostenkowski/imagestore/coverage)
 [![Issue Count](https://codeclimate.com/github/rostenkowski/imagestore/badges/issue_count.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
 
-*High Performance Image Storage for PHP*
+
 
 ## Installation
 
