@@ -8,7 +8,7 @@ use Nette\Utils\Strings;
 use Rostenkowski\ImageStore\Exceptions\HashException;
 use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
 
-trait HasImage
+trait MetaTrait
 {
 
 	/**
@@ -64,15 +64,6 @@ trait HasImage
 
 
 	/**
-	 * @return integer
-	 */
-	public function getType()
-	{
-		return $this->type;
-	}
-
-
-	/**
 	 * Checks that the given string is valid SHA1 hash and normalizes it to lower case.
 	 *
 	 * @param  string $hash Image hash to validate
@@ -90,6 +81,33 @@ trait HasImage
 		}
 
 		return $hash;
+	}
+
+
+	/**
+	 * @return integer
+	 */
+	public function getHeight()
+	{
+		return $this->height;
+	}
+
+
+	/**
+	 * @param integer $height
+	 */
+	public function setHeight($height)
+	{
+		$this->height = $height;
+	}
+
+
+	/**
+	 * @return integer
+	 */
+	public function getType()
+	{
+		return $this->type;
 	}
 
 
@@ -114,29 +132,11 @@ trait HasImage
 	 */
 	private function checkType($type)
 	{
-		if (!in_array($type, array(Image::JPEG, Image::PNG, Image::GIF), TRUE)) {
+		if (!in_array($type, array(Image::JPEG, Image::PNG, Image::GIF), true)) {
 			throw new ImageTypeException($type);
 		}
 
 		return $type;
-	}
-
-
-	/**
-	 * @return integer
-	 */
-	public function getHeight()
-	{
-		return $this->height;
-	}
-
-
-	/**
-	 * @param integer $height
-	 */
-	public function setHeight($height)
-	{
-		$this->height = $height;
 	}
 
 

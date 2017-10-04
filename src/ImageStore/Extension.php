@@ -5,74 +5,41 @@ namespace Rostenkowski\ImageStore;
 
 use Nette\DI\CompilerExtension;
 use Nette\DI\Helpers;
-use Nette\Utils\Validators;
-use Tracy\Debugger;
+use Rostenkowski\ImageStore\Entity\ImageEntity;
+use Rostenkowski\ImageStore\Macro\ImageMacro;
 
 class Extension extends CompilerExtension
 {
 
-	protected $options = [
-		'imageEntity'  => 'Rostenkowski\ImageStore\Entity\ImageEntity',
-		'storageClass' => 'Rostenkowski\ImageStore\ImageStorage',
+	protected $defaults = [
+		'imageEntity'  => ImageEntity::class,
+		'storageClass' => ImageStorage::class,
 		'storageDir'   => '%appDir%/../storage/images',
 		'cacheDir'     => '%wwwDir%/cache/images',
 		'basePath'     => '/cache/images/',
 		'macros'       => [
-			'Rostenkowski\ImageStore\Macro\ImageMacro',
-		],
+			ImageMacro::class . '::install'
+		]
 	];
-
-
-	/**
-	 * validate and expand the configuration options
-	 *
-	 * todo: this method may change when the configuration api is stabilized
-	 */
-	protected function setupOptions(): void
-	{
-		$this->options = Helpers::expand($this->validateConfig($this->options, $this->getConfig()), $this->getContainerBuilder()->parameters);
-
-		Debugger::barDump($this->options, "$this->name options");
-	}
 
 
 	public function loadConfiguration()
 	{
-		$this->setupOptions();
-
 		$builder = $this->getContainerBuilder();
+		$config = Helpers::expand($this->validateConfig($this->defaults), $this->getContainerBuilder()->parameters);
 
-		$builder->addDefinition($this->prefix('storage'))
-			->setFactory($this->options['storageClass'], [
-				$this->options['storageDir'],
-				$this->options['cacheDir'],
-				$this->options['basePath'],
+		$builder
+			->addDefinition($this->prefix('storage'))
+			->setFactory($config['storageClass'], [
+				$config['storageDir'],
+				$config['cacheDir'],
+				$config['basePath'],
 			]);
 
-		// Latte macros
-		$this->addMacros($this->options);
-	}
-
-
-	/**
-	 * Adds macros (found in $options) to latte factory definition.
-	 *
-	 * @param array
-	 */
-	private function addMacros($options)
-	{
 		$builder = $this->getContainerBuilder();
-
-		if (array_key_exists('macros', $options) && is_array($options['macros'])) {
-			$factory = $builder->getDefinition($builder->getByType(ILatteFactory::class));
-			foreach ($options['macros'] as $macro) {
-				if (strpos($macro, '::') === false && class_exists($macro)) {
-					$macro .= '::install';
-				} else {
-					Validators::assert($macro, 'callable');
-				}
-				$factory->addSetup($macro . '(?->getCompiler())', array('@self'));
-			}
-		}
+		$definition = $builder->getDefinition('latte.latteFactory');
+		$setup = '?->onCompile[] = function ($engine) { ' . ImageMacro::class . '::install($engine->getCompiler()); }';
+		$definition->addSetup($setup, ['@self']);
 	}
+
 }

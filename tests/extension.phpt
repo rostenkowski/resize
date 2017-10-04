@@ -11,7 +11,6 @@ use Nette\DI\ContainerLoader;
 use Rostenkowski\ImageStore\Entity\ImageEntity;
 use Rostenkowski\ImageStore\Files\ImageFile;
 use Tester\Assert;
-use Tracy\Dumper;
 
 require __DIR__ . '/bootstrap.php';
 
@@ -20,7 +19,7 @@ require __DIR__ . '/bootstrap.php';
  */
 Assert::noError(function () {
 
-	echo Dumper::toTerminal(TEMP_DIR);
+	ECHO TEMP_DIR;
 
 	$loader = new  ContainerLoader(TEMP_DIR, true);
 	$class = $loader->load(function (Compiler $compiler) {
