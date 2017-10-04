@@ -25,7 +25,7 @@ use Rostenkowski\ImageStore\Files\ImageFile;
  *   deleted only after it is sure it is not referenced from other entities.
  * - The image thumbnails are created on demand and cached in the `$cacheDirectory`.
  */
-class ImageStorage extends Object implements Storage
+class ImageStorage implements Storage
 {
 
 	/**
@@ -72,7 +72,7 @@ class ImageStorage extends Object implements Storage
 	 * @param string  $baseUrl
 	 * @param boolean $tryCreateDirectories
 	 */
-	public function __construct($directory, $cacheDirectory, $baseUrl = '/cache/', $tryCreateDirectories = TRUE)
+	public function __construct($directory, $cacheDirectory, $baseUrl = '/cache/', $tryCreateDirectories = true)
 	{
 		$this->directory = new Directory($directory, $tryCreateDirectories);
 		$this->cacheDirectory = new Directory($cacheDirectory, $tryCreateDirectories);
@@ -398,7 +398,7 @@ class ImageStorage extends Object implements Storage
 	 */
 	private function processDimensions($dimensions)
 	{
-		if (strpos($dimensions, 'x') !== FALSE) {
+		if (strpos($dimensions, 'x') !== false) {
 			list($width, $height) = explode('x', $dimensions); // different dimensions, eg. "210x150"
 			$width = intval($width);
 			$height = intval($height);
@@ -423,7 +423,7 @@ class ImageStorage extends Object implements Storage
 		if (!$type || !key_exists($type, $this->extensions)) {
 
 			// SUDDEN DEATH
-			throw new \Exception('images: get extension for type ' . var_export($type, TRUE) . ' not found');
+			throw new \Exception('images: get extension for type ' . var_export($type, true) . ' not found');
 		}
 
 		return $this->extensions[$type];
