@@ -1,10 +1,10 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Exceptions\HashException;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Exceptions\HashException;
 use Tester\Assert;
 
 require __DIR__ . '/bootstrap.php';

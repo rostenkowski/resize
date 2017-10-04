@@ -1,10 +1,10 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
-use Rostenkowski\ImageStore\Exceptions\DirectoryException;
-use Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException;
+use Rostenkowski\Resize\Exceptions\DirectoryException;
+use Rostenkowski\Resize\Exceptions\InvalidCacheDirectoryException;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';

@@ -1,9 +1,9 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Directory;
+namespace Rostenkowski\Resize\Directory;
 
 
-use Rostenkowski\ImageStore\Exceptions\DirectoryException;
+use Rostenkowski\Resize\Exceptions\DirectoryException;
 
 /**
  * Directory wrapper

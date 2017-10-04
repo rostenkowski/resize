@@ -1,10 +1,10 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Entity;
+namespace Rostenkowski\Resize\Entity;
 
 
 use Nette\Utils\Image;
-use Rostenkowski\ImageStore\Meta;
+use Rostenkowski\Resize\Meta;
 
 /**
  * "Image not found" entity

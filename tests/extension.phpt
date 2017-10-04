@@ -1,15 +1,15 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
 
+namespace Rostenkowski\Resize;
 
 use Latte\Engine;
 use Nette\Bridges\ApplicationDI\LatteExtension;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\DI\Compiler;
 use Nette\DI\ContainerLoader;
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Files\ImageFile;
 use Tester\Assert;
 
 require __DIR__ . '/bootstrap.php';

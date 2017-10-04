@@ -1,10 +1,10 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
 use Nette\Utils\Image;
-use Rostenkowski\ImageStore\Entity\EmptyImage;
+use Rostenkowski\Resize\Entity\EmptyImage;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';

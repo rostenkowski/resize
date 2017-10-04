@@ -1,12 +1,12 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
 use Nette\DI\CompilerExtension;
 use Nette\DI\Helpers;
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Macro\ImageMacro;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Macro\ImageMacro;
 
 class Extension extends CompilerExtension
 {

@@ -1,6 +1,6 @@
-# ImageStore
+# Resize
 
-*High Performance Image Storage for PHP*
+*High Performance Image Storage Library for PHP 7*
 
 [![release](http://github-release-version.herokuapp.com/github/rostenkowski/imagestore/release.svg?style=flat)](https://github.com/rostenkowski/imagestore/releases/latest)
 [![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
@@ -23,9 +23,9 @@ composer require rostenkowski/imagestore
 ## Configuration
 
 The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration to your [local configuration](https://github.com/nette/sandbox/tree/master/app/config) file. 
-```yml
+```neon
 extensions:
-    imageStore: Rostenkowski\ImageStore\Extension
+    imageStore: Rostenkowski\Resize\Extension
 
 imageStore:
     storageDir: %baseDir%/data/images
@@ -40,7 +40,7 @@ If you aren't using the the DI extension the image macros should be registered t
 nette:
     latte:
         macros:
-            - Rostenkowski\ImageStore\Macro\ImageMacro::install
+            - Rostenkowski\Resize\Macro\ImageMacro::install
 ```
 The storage can be created manually in presenter or registered as service this way:
 ```yaml
@@ -65,10 +65,10 @@ For the full API documentation navigate to the `docs/api/` directory and open `i
 ```php
 <?php
 
-use Rostenkowski\ImageStore\Meta;
-use Rostenkowski\ImageStore\File;
-use Rostenkowski\ImageStore\Request;
-use Rostenkowski\ImageStore\ImageStorage;
+use Rostenkowski\Resize\Meta;
+use Rostenkowski\Resize\File;
+use Rostenkowski\Resize\Request;
+use Rostenkowski\Resize\ImageStorage;
 use Nette\Application\Responses\FileResponse;
 use Nette\Http\FileUpload;
 use Nette\Utils\Image;
@@ -89,10 +89,10 @@ $storage->contains(Meta $meta);
 $storage->original(Meta $meta);
 
 // rotate image
-$storage->rotate(Meta $meta, 90);
+$storage->rotate(Meta $meta, 90); // Meta
 
 // downloaded requested thumbnail
-$storage->download(Request $request);
+$storage->download(Request $request); // Nette\Application\Responses\FileResponse
 
 // fetch requested thumbnail
 $storage->fetch(Request $request);

@@ -1,12 +1,12 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Exceptions\ImageFileException;
-use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
-use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Exceptions\ImageFileException;
+use Rostenkowski\Resize\Exceptions\ImageTypeException;
+use Rostenkowski\Resize\Files\ImageFile;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';

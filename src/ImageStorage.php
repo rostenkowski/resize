@@ -1,19 +1,19 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
 use Nette\Application\Responses\FileResponse;
 use Nette\Http\FileUpload;
 use Nette\Utils\Image;
 use Nette\Utils\Strings;
-use Rostenkowski\ImageStore\Directory\Directory;
-use Rostenkowski\ImageStore\Entity\EmptyImage;
-use Rostenkowski\ImageStore\Entity\ImageEnvelope;
-use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
-use Rostenkowski\ImageStore\Exceptions\InvalidCacheDirectoryException;
-use Rostenkowski\ImageStore\Exceptions\UploaderException;
-use Rostenkowski\ImageStore\Files\ImageFile;
+use Rostenkowski\Resize\Directory\Directory;
+use Rostenkowski\Resize\Entity\EmptyImage;
+use Rostenkowski\Resize\Entity\ImageEnvelope;
+use Rostenkowski\Resize\Exceptions\ImageTypeException;
+use Rostenkowski\Resize\Exceptions\InvalidCacheDirectoryException;
+use Rostenkowski\Resize\Exceptions\UploaderException;
+use Rostenkowski\Resize\Files\ImageFile;
 
 /**
  * Image file storage

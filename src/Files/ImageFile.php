@@ -1,10 +1,10 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Files;
+namespace Rostenkowski\Resize\Files;
 
 
-use Rostenkowski\ImageStore\Exceptions\ImageFileException;
-use Rostenkowski\ImageStore\File;
+use Rostenkowski\Resize\Exceptions\ImageFileException;
+use Rostenkowski\Resize\File;
 
 /**
  * Simple image file wrapper

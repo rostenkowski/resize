@@ -1,12 +1,12 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Tests;
+use Rostenkowski\Resize\Tests;
 
 
 use Nette\Http\FileUpload;
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Exceptions\UploaderException;
-use Rostenkowski\ImageStore\ImageStorage;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Exceptions\UploaderException;
+use Rostenkowski\Resize\ImageStorage;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';

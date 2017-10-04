@@ -1,12 +1,12 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Requests;
+namespace Rostenkowski\Resize\Requests;
 
 
 use Nette\Utils\Image;
-use Rostenkowski\ImageStore\Entity\EmptyImage;
-use Rostenkowski\ImageStore\Meta;
-use Rostenkowski\ImageStore\Request;
+use Rostenkowski\Resize\Entity\EmptyImage;
+use Rostenkowski\Resize\Meta;
+use Rostenkowski\Resize\Request;
 
 /**
  * Image request encapsulation

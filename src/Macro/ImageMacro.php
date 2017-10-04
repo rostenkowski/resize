@@ -1,6 +1,6 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Macro;
+namespace Rostenkowski\Resize\Macro;
 
 
 use Latte\Compiler;
@@ -49,7 +49,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroBg(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write(' ?> style="background-image: url(\'<?php $imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>\');"<?php ');
+		return $writer->write(' ?> style="background-image: url(\'<?php $imageRequest = Rostenkowski\Resize\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>\');"<?php ');
 	}
 
 
@@ -62,7 +62,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroCrop(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write(' ?> src="<?php $imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
+		return $writer->write(' ?> src="<?php $imageRequest = Rostenkowski\Resize\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
 	}
 
 
@@ -75,7 +75,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroCropBegin(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write('$imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest));');
+		return $writer->write('$imageRequest = Rostenkowski\Resize\Requests\ImageRequest::crop(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest));');
 	}
 
 
@@ -88,7 +88,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroImage(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write(' ?> href="<?php $imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::fromMacro(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
+		return $writer->write(' ?> href="<?php $imageRequest = Rostenkowski\Resize\Requests\ImageRequest::fromMacro(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
 	}
 
 
@@ -101,7 +101,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroImageBegin(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write('$imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::fromMacro(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest));');
+		return $writer->write('$imageRequest = Rostenkowski\Resize\Requests\ImageRequest::fromMacro(%node.word, %node.array?); echo %escape($__imagestore->link($imageRequest));');
 	}
 
 
@@ -114,7 +114,7 @@ class ImageMacro extends MacroSet
 	 */
 	public function macroSrc(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write('$imageRequest = Rostenkowski\ImageStore\Requests\ImageRequest::fromMacro(%node.word, %node.array?); ?> src="<?php echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
+		return $writer->write('$imageRequest = Rostenkowski\Resize\Requests\ImageRequest::fromMacro(%node.word, %node.array?); ?> src="<?php echo %escape($__imagestore->link($imageRequest)); ?>"<?php ');
 	}
 
 }

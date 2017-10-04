@@ -1,12 +1,12 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Entity;
+namespace Rostenkowski\Resize\Entity;
 
 
 use Nette\Utils\Image;
 use Nette\Utils\Strings;
-use Rostenkowski\ImageStore\Exceptions\HashException;
-use Rostenkowski\ImageStore\Exceptions\ImageTypeException;
+use Rostenkowski\Resize\Exceptions\HashException;
+use Rostenkowski\Resize\Exceptions\ImageTypeException;
 
 trait MetaTrait
 {

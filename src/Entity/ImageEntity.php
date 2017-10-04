@@ -1,9 +1,9 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Entity;
+namespace Rostenkowski\Resize\Entity;
 
 
-use Rostenkowski\ImageStore\Meta;
+use Rostenkowski\Resize\Meta;
 
 /**
  * Basic implementation of the image meta information as Doctrine entity.

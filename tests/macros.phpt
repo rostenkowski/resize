@@ -1,13 +1,13 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Tests;
+use Rostenkowski\Resize\Tests;
 
 
 use Latte\Engine;
-use Rostenkowski\ImageStore\Entity\ImageEntity;
-use Rostenkowski\ImageStore\Files\ImageFile;
-use Rostenkowski\ImageStore\ImageStorage;
-use Rostenkowski\ImageStore\Macro\ImageMacro;
+use Rostenkowski\Resize\Entity\ImageEntity;
+use Rostenkowski\Resize\Files\ImageFile;
+use Rostenkowski\Resize\ImageStorage;
+use Rostenkowski\Resize\Macro\ImageMacro;
 use Tester\Assert;
 
 require __DIR__ . '/bootstrap.php';

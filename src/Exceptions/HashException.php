@@ -1,6 +1,6 @@
 <?php
 
-namespace Rostenkowski\ImageStore\Exceptions;
+namespace Rostenkowski\Resize\Exceptions;
 
 
 use Exception;

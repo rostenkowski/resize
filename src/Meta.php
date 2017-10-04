@@ -1,21 +1,20 @@
 <?php
 
-namespace Rostenkowski\ImageStore;
+namespace Rostenkowski\Resize;
 
 
 /**
- * Image file interface
+ * Image meta information interface
  */
-interface File
+interface Meta
 {
 
-
 	/**
-	 * Returns the image filename.
+	 * Returns the image SHA1 hash.
 	 *
 	 * @return string
 	 */
-	public function getName();
+	public function getHash();
 
 
 	/**
@@ -27,11 +26,11 @@ interface File
 
 
 	/**
-	 * Sets the image filename.
+	 * Sets the image SHA1 hash.
 	 *
-	 * @param string $name
+	 * @param string $hash
 	 */
-	public function setName($name);
+	public function setHash($hash);
 
 
 	/**
@@ -40,6 +39,4 @@ interface File
 	 * @param integer $type
 	 */
 	public function setType($type);
-
-
 }
