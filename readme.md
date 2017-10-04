@@ -2,21 +2,21 @@
 
 *High Performance Image Storage Library for PHP 7*
 
-[![release](http://github-release-version.herokuapp.com/github/rostenkowski/imagestore/release.svg?style=flat)](https://github.com/rostenkowski/imagestore/releases/latest)
-[![Build Status](https://travis-ci.org/rostenkowski/imagestore.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
-[![Coverage Status](https://coveralls.io/repos/github/rostenkowski/imagestore/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
-[![Code Climate](https://codeclimate.com/github/rostenkowski/imagestore/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/imagestore/blob/master/LICENSE)
+[![release](http://github-release-version.herokuapp.com/github/rostenkowski/resize/release.svg?style=flat)](https://github.com/rostenkowski/imagestore/releases/latest)
+[![Build Status](https://travis-ci.org/rostenkowski/resize.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
+[![Coverage Status](https://coveralls.io/repos/github/rostenkowski/resize/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
+[![Code Climate](https://codeclimate.com/github/rostenkowski/resize/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/resize/blob/master/LICENSE)
 
 
 
 ## Installation
 
-Download the latest [package](https://github.com/rostenkowski/imagestore/releases) manually
+Download the latest [package](https://github.com/rostenkowski/resize/releases) manually
 or better use the [composer](https://getcomposer.org/doc/00-intro.md#globally)
 
 ```bash
-composer require rostenkowski/imagestore
+composer require rostenkowski/resize
 ```
 
 ## Configuration
@@ -53,7 +53,7 @@ services:
 
 The library is tested against PHP **5.5**, **5.6** and **7.0** and Nette **2.3** but it should be compatible with previous stable Nette **2.2** and the latest Nette **2.4-dev** as well.
 
-For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/imagestore/blob/master/composer.json) file.
+For the full list of dependencies see the [`composer.json`](https://github.com/rostenkowski/resize/blob/master/composer.json) file.
 
 ## API 
 
@@ -112,7 +112,7 @@ $storage->send(Request $request);
 
 ## Contribution
 
-Feel free to open an [Issue](https://github.com/rostenkowski/imagestore/issues) or [Pull Request](https://github.com/rostenkowski/imagestore/pulls).
+Feel free to open an [Issue](https://github.com/rostenkowski/resize/issues) or [Pull Request](https://github.com/rostenkowski/imagestore/pulls).
 
 The source code of the library is fully covered by [Nette Tester](https://tester.nette.org/) tests.
 
@@ -136,5 +136,5 @@ To check the code coverage see the `docs/coverage.html` file.
 
 ## Example code 
 
-Please see the [**Usage**](https://github.com/rostenkowski/imagestore/wiki/usage) wiki page.
+Please see the [**Usage**](https://github.com/rostenkowski/resize/wiki/usage) wiki page.
 

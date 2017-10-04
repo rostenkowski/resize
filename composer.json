@@ -1,5 +1,5 @@
 {
-  "name": "rostenkowski/imagestore",
+  "name": "rostenkowski/resize",
   "type": "library",
   "minimum-stability": "dev",
   "require": {
