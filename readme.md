@@ -6,7 +6,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/rostenkowski/resize/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
 [![Code Climate](https://codeclimate.com/github/rostenkowski/resize/badges/gpa.svg)](https://codeclimate.com/github/rostenkowski/imagestore)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rostenkowski/resize/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rostenkowski/resize/?branch=master)
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/rostenkowski/resize/blob/master/LICENSE)
 
 
 
