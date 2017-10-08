@@ -1,6 +1,6 @@
 # Resize
 
-High Performance Image Storage for Nette Framework 3
+High Performance **Image Storage** for **Nette Framework 3**
 
 [![Build Status](https://travis-ci.org/rostenkowski/resize.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![Coverage Status](https://coveralls.io/repos/github/rostenkowski/resize/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
