@@ -1,6 +1,6 @@
 # Resize
 
-High Performance Image Storage for PHP 7
+High Performance Image Storage for Nette Framework 3
 
 [![Build Status](https://travis-ci.org/rostenkowski/resize.svg?branch=master)](https://travis-ci.org/rostenkowski/imagestore)
 [![Coverage Status](https://coveralls.io/repos/github/rostenkowski/resize/badge.svg)](https://coveralls.io/github/rostenkowski/imagestore)
@@ -23,9 +23,9 @@ composer require rostenkowski/resize
 The best way is to use the built-in Nette DI container extension in application configuration, usually located in `app/config.neon`. You can place the `imageStore` part of the configuration to your [local configuration](https://github.com/nette/sandbox/tree/master/app/config) file. 
 ```neon
 extensions:
-    imageStore: Rostenkowski\Resize\Extension
+    resize: Rostenkowski\Resize\Extension
 
-imageStore:
+resize:
     storageDir: %baseDir%/data/images
     cacheDir:   %baseDir%/www/images
     basePath:   /images/
